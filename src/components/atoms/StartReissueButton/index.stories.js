@@ -11,6 +11,6 @@ const stories = storiesOf('atoms', module);
 stories.add(
   'StartReissueButton',
   withInfo('再発行の手続きをスタートするボタン')(() => (
-    <ReissueStartButton href={text('http://google.com')} />
+    <ReissueStartButton href={text('href', 'http://google.com')} />
   )),
 );

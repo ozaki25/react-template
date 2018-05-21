@@ -4,7 +4,9 @@ import toJson from 'enzyme-to-json';
 
 configure({ adapter: new Adapter() });
 
-export const elementToJson = element => toJson(shallow(element));
+export const elementToJson = element =>
+  // shallowだとstyled-componentsが展開されない。mountだとstyled-components以外も展開されちゃうし重い。
+  toJson(shallow(element));
 
 export const snapshot = (title, element) =>
   it(`should match snapshot: ${title}`, () => {

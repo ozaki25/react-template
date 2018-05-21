@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 300px;
   &:active {
     opacity: 0.5;
-    box-shadow: 2px 2px 2px #999;
+    box-shadow: 2px 2px 2px #f5f5f5;
   }
 `;
 

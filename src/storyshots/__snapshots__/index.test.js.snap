@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots atoms StartReissueButton 1`] = `
+exports[`Storyshots molecules StartReissueButton 1`] = `
 <div>
   <div
     style={
@@ -130,7 +130,7 @@ exports[`Storyshots atoms StartReissueButton 1`] = `
               }
             }
           >
-            atoms
+            molecules
           </h1>
           <h2
             style={

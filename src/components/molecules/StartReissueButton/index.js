@@ -2,21 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Container = styled.div`
+export const Container = styled.div`
   border: solid 1px #eee;
   box-shadow: 2px 2px 2px #bdbdbd;
   width: 300px;
   &:active {
     opacity: 0.5;
-    box-shadow: 2px 2px 2px #f5f5f5;
+    box-shadow: 2px 2px 2px #999;
   }
 `;
 
-const Link = styled.a`
+export const Link = styled.a`
   text-decoration: none;
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   color: #212121;
   font-size: 14px;
   font-weight: bold;
@@ -24,7 +24,7 @@ const Title = styled.div`
   padding: 10px;
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
   color: #212121;
   font-size: 12px;
   padding: 10px;

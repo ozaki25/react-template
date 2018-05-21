@@ -6,7 +6,7 @@ import { text } from '@storybook/addon-knobs';
 
 import ReissueStartButton from './';
 
-const stories = storiesOf('atoms', module);
+const stories = storiesOf('molecules', module);
 
 stories.add(
   'StartReissueButton',

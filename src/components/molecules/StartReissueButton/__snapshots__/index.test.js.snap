@@ -16,22 +16,44 @@ exports[`should match snapshot: StartReissueButton 1`] = `
 `;
 
 exports[`should match snapshot: StartReissueButton/Container 1`] = `
+.c0 {
+  border: solid 1px #eee;
+  box-shadow: 2px 2px 2px #bdbdbd;
+  width: 300px;
+}
+
+.c0:active {
+  opacity: 0.5;
+  box-shadow: 2px 2px 2px #999;
+}
+
 <div
-  className="sc-bdVaJa cHkdUf"
+  className="c0"
 />
 `;
 
 exports[`should match snapshot: StartReissueButton/Description 1`] = `
+.c0 {
+  color: #212121;
+  font-size: 12px;
+  padding: 10px;
+}
+
 <div
-  className="sc-bxivhb UFBbs"
+  className="c0"
 >
   説明
 </div>
 `;
 
 exports[`should match snapshot: StartReissueButton/Link 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 <a
-  className="sc-bwzfXH dJuWjI"
+  className="c0"
   href="http://google.com/"
 >
   リンク
@@ -39,8 +61,16 @@ exports[`should match snapshot: StartReissueButton/Link 1`] = `
 `;
 
 exports[`should match snapshot: StartReissueButton/Title 1`] = `
+.c0 {
+  color: #212121;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #eee;
+  padding: 10px;
+}
+
 <div
-  className="sc-htpNat dzExFV"
+  className="c0"
 >
   タイトル
 </div>

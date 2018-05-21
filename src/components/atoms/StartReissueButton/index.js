@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Container = styled.div`
   border: solid 1px #eee;
-  box-shadow: 2px 2px 2px #bdbdbd
+  box-shadow: 2px 2px 2px #bdbdbd;
   width: 300px;
   &:active {
     opacity: 0.5;

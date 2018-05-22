@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot: Main 1`] = `
+<styled.section>
+  <styled.div>
+    <StartReissueButton
+      href="/"
+    />
+  </styled.div>
+  <BasicText>
+    ※今後、本アプリでできる手続を順次拡大していく予定です。
+  </BasicText>
+  <styled.div>
+    <Link
+      href="#"
+    >
+      ライセンスについて
+    </Link>
+  </styled.div>
+</styled.section>
+`;
+
+exports[`should match snapshot: Main/Container 1`] = `
+.c0 {
+  padding: 15px 10px 20px;
+}
+
+<section
+  className="c0"
+/>
+`;
+
+exports[`should match snapshot: Main/LinkContainer 1`] = `
+.c0 {
+  text-align: right;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`should match snapshot: Main/StartReissueButtonContainer 1`] = `
+.c0 {
+  text-align: center;
+}
+
+<div
+  className="c0"
+/>
+`;

@@ -20,6 +20,7 @@ exports[`should match snapshot: StartReissueButton/Container 1`] = `
   border: solid 1px #eee;
   box-shadow: 2px 2px 2px #bdbdbd;
   width: 300px;
+  display: inline-block;
 }
 
 .c0:active {
@@ -37,6 +38,7 @@ exports[`should match snapshot: StartReissueButton/Description 1`] = `
   color: #212121;
   font-size: 12px;
   padding: 10px;
+  text-align: left;
 }
 
 <div
@@ -67,6 +69,7 @@ exports[`should match snapshot: StartReissueButton/Title 1`] = `
   font-weight: bold;
   background-color: #eee;
   padding: 10px;
+  text-align: left;
 }
 
 <div

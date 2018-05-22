@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot: TopPage 1`] = `
+<React.Fragment>
+  <header>
+    アプリメニュー
+  </header>
+  <Main />
+  <footer>
+    ver.1.0.1
+  </footer>
+</React.Fragment>
+`;

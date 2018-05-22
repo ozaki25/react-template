@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot: Link 1`] = `
+<styled.a
+  href="http://google.com"
+>
+  リンク
+</styled.a>
+`;
+
+exports[`should match snapshot: Link/LinkText 1`] = `
+.c0 {
+  color: #666;
+  font-size: 16px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0:active {
+  opacity: 0.5;
+}
+
+<a
+  className="c0"
+>
+  リンク
+</a>
+`;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './index.css';
 
@@ -12,6 +13,7 @@ function Home() {
       <p className="Home-intro">
         To get started, edit <code>src/Home.js</code> and save to reload.
       </p>
+      <Link to="/hello">Hello!</Link>
     </div>
   );
 }

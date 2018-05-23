@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot: Hello 1`] = `
+<div
+  className="Home"
+>
+  <header
+    className="Home-header"
+  >
+    <img
+      alt="logo"
+      className="Home-logo"
+      src="logo.svg"
+    />
+    <h1
+      className="Home-title"
+    >
+      Welcome to React
+    </h1>
+  </header>
+  <p
+    className="Home-intro"
+  >
+    To get started, edit 
+    <code>
+      src/Home.js
+    </code>
+     and save to reload.
+  </p>
+  <Link
+    replace={false}
+    to="/hello"
+  >
+    Hello!
+  </Link>
+  <div>
+    <input />
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Hello
+    </button>
+  </div>
+</div>
+`;

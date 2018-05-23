@@ -4,6 +4,11 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import Home from './';
 
+const props = {
+  greetings: [],
+  greet: () => {},
+  bye: () => {},
+};
 const stories = storiesOf('pages', module);
 stories.addDecorator(story => <BrowserRouter>{story()}</BrowserRouter>);
-stories.add('Home', withInfo('Home')(() => <Home />));
+stories.add('Home', withInfo('Home')(() => <Home {...props} />));

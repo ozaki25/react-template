@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addHello, removeHello } from '../actions/hello';
+import { addHello, removeHello } from '../modules/hello';
 import Home from '../components/pages/Home';
 
 const mapStateToProps = ({ hello }) => ({

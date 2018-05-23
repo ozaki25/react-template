@@ -1,6 +1,6 @@
 // Actions
-const ADD = 'HELLO/ADD';
-const REMOVE = 'HELLO/REMOVE';
+export const ADD = 'HELLO/ADD';
+export const REMOVE = 'HELLO/REMOVE';
 
 // Reducer
 const initialState = { greetings: [] };

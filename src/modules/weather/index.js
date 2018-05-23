@@ -5,18 +5,22 @@ export const FETCH_FAILURE = 'WEATHER/FETCH_FAILURE';
 export const FETCH_ERROR = 'WEATHER/FETCH_EERROR';
 
 // Reducer
-const initialState = {};
+const initialState = {
+  loading: false,
+  body: {},
+  error: {},
+};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_REQUEST:
-      return { ...state };
+      return { ...state, loading: true };
     case FETCH_SUCCESS:
-      return { ...state };
+      return { ...state, loading: false, body: action.body };
     case FETCH_FAILURE:
-      return { ...state };
+      return { ...state, loading: false, body: action.body };
     case FETCH_ERROR:
-      return { ...state };
+      return { ...state, loading: false, error: action.exception };
     default:
       return state;
   }

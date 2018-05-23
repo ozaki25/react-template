@@ -21,7 +21,7 @@ class Home extends React.Component {
   };
 
   render() {
-    const { greetings } = this.props;
+    const { greetings, getWeather } = this.props;
     return (
       <div className="Home">
         <header className="Home-header">
@@ -48,6 +48,11 @@ class Home extends React.Component {
             </p>
           ))}
         </div>
+        <div>
+          <button type="button" onClick={getWeather}>
+            天気
+          </button>
+        </div>
       </div>
     );
   }
@@ -57,6 +62,12 @@ Home.propTypes = {
   greetings: PropTypes.arrayOf(PropTypes.string).isRequired,
   greet: PropTypes.func.isRequired,
   bye: PropTypes.func.isRequired,
+  // weather: PropTypes.shape({
+  //   loading: PropTypes.bool,
+  //   body: PropTypes.object,
+  //   error: PropTypes.object,
+  // }).isRequired,
+  getWeather: PropTypes.func.isRequired,
 };
 
 export default Home;

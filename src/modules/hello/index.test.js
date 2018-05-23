@@ -25,33 +25,40 @@ describe('Hello', () => {
     describe('actionが渡されない場合', () => {
       it('initialStateが返ること', () => {
         const state = undefined;
+        const action = {};
         const expected = { greetings: [] };
-        expect(reducer(state, {})).toEqual(expected);
+        expect(reducer(state, action)).toEqual(expected);
       });
     });
 
     describe('action typeがADDの場合', () => {
-      it('stateがinitialStateの場合1件追加されていること', () => {
-        const state = undefined;
-        const action = { type: ADD, text: 'ozaki' };
-        const expected = { greetings: ['ozaki'] };
-        expect(reducer(state, action)).toEqual(expected);
+      describe('stateがinitialStateの場合', () => {
+        it('1件追加されていること', () => {
+          const state = undefined;
+          const action = { type: ADD, text: 'ozaki' };
+          const expected = { greetings: ['ozaki'] };
+          expect(reducer(state, action)).toEqual(expected);
+        });
       });
 
-      it('stateに値が入っている場合1件追加されていること', () => {
-        const state = { greetings: ['fukushima', 'imaki'] };
-        const action = { type: ADD, text: 'ozaki' };
-        const expected = { greetings: ['fukushima', 'imaki', 'ozaki'] };
-        expect(reducer(state, action)).toEqual(expected);
+      describe('stateに値が入っている場合', () => {
+        it('1件追加されていること', () => {
+          const state = { greetings: ['fukushima', 'imaki'] };
+          const action = { type: ADD, text: 'ozaki' };
+          const expected = { greetings: ['fukushima', 'imaki', 'ozaki'] };
+          expect(reducer(state, action)).toEqual(expected);
+        });
       });
     });
 
     describe('action typeがREMOVEの場合', () => {
-      it('stateに値が入っている場合actionで指定したインデックスの値が削除されていること', () => {
-        const state = { greetings: ['ozaki', 'fukushima', 'imaki'] };
-        const action = { type: REMOVE, index: 0 };
-        const expected = { greetings: ['fukushima', 'imaki'] };
-        expect(reducer(state, action)).toEqual(expected);
+      describe('stateに値が入っている場合', () => {
+        it('actionで指定したインデックスの値が削除されていること', () => {
+          const state = { greetings: ['ozaki', 'fukushima', 'imaki'] };
+          const action = { type: REMOVE, index: 0 };
+          const expected = { greetings: ['fukushima', 'imaki'] };
+          expect(reducer(state, action)).toEqual(expected);
+        });
       });
     });
   });

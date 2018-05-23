@@ -1,14 +1,16 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
-import {
-  /* reducer, */ fetchRequest,
+import reducer, {
+  fetchRequest,
   fetchSuccess,
   fetchFailure,
+  fetchError,
   fetchApi,
   FETCH_REQUEST,
   FETCH_SUCCESS,
   FETCH_FAILURE,
+  FETCH_ERROR,
 } from '.';
 
 const middlewares = [thunk];
@@ -38,63 +40,68 @@ describe('Weather', () => {
     });
 
     it('should create an action to fetch failure', () => {
-      const exception = {};
+      const body = {};
       const expectedAction = {
         type: FETCH_FAILURE,
-        exception,
+        body,
       };
-      expect(fetchFailure(exception)).toEqual(expectedAction);
+      expect(fetchFailure(body)).toEqual(expectedAction);
     });
 
-    it('should create an action to fetch success action', async () => {
-      const expectedActions = [{ type: FETCH_REQUEST }, { type: FETCH_SUCCESS, body: {} }];
-      fetchMock.get('*', 200);
+    it('should create an action to fetch error', () => {
+      const exception = {};
+      const expectedAction = {
+        type: FETCH_ERROR,
+        exception,
+      };
+      expect(fetchError(exception)).toEqual(expectedAction);
+    });
+
+    it('should create an action to fetch result success', async () => {
+      const expectedActions = [
+        { type: FETCH_REQUEST },
+        { type: FETCH_SUCCESS, body: { title: '東京都 東京 の天気' } },
+      ];
       const store = mockStore();
+      fetchMock.getOnce('*', {
+        body: { title: '東京都 東京 の天気' },
+        headers: { 'content-type': 'application/json' },
+      });
       await store.dispatch(fetchApi());
       return expect(store.getActions()).toEqual(expectedActions);
     });
 
-    // it('should create an action to fetch failure action', async () => {
-    //   const expectedActions = [{ type: FETCH_REQUEST }, { type: FETCH_SUCCESS, body: {} }];
-    //   fetchMock.getOnce('*', 500);
-    //   const store = mockStore({});
-    //   await store.dispatch(fetchApi());
-    //   return expect(store.getActions()).toEqual(expectedActions);
-    // });
+    it('should create an action to fetch result failure', async () => {
+      const expectedActions = [{ type: FETCH_REQUEST }, { type: FETCH_FAILURE, body: {} }];
+      const store = mockStore();
+      fetchMock.getOnce('*', {
+        status: 500,
+        body: {},
+        headers: { 'content-type': 'application/json' },
+      });
+      await store.dispatch(fetchApi());
+      return expect(store.getActions()).toEqual(expectedActions);
+    });
+
+    it('should create an action to fetch result error', async () => {
+      const expectedActions = [
+        { type: FETCH_REQUEST },
+        { type: FETCH_ERROR, exception: new Error('error') },
+      ];
+      fetchMock.getOnce('*', Promise.reject(new Error('error')));
+      const store = mockStore({});
+      await store.dispatch(fetchApi());
+      return expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  // describe('reducer', () => {
-  //   describe('actionが渡されない場合', () => {
-  //     it('initialStateが返ること', () => {
-  //       const state = undefined;
-  //       const expected = { greetings: [] };
-  //       expect(reducer(state, {})).toEqual(expected);
-  //     });
-  //   });
-
-  //   describe('action typeがADDの場合', () => {
-  //     it('stateがinitialStateの場合1件追加されていること', () => {
-  //       const state = undefined;
-  //       const action = { type: ADD, text: 'ozaki' };
-  //       const expected = { greetings: ['ozaki'] };
-  //       expect(reducer(state, action)).toEqual(expected);
-  //     });
-
-  //     it('stateに値が入っている場合1件追加されていること', () => {
-  //       const state = { greetings: ['fukushima', 'imaki'] };
-  //       const action = { type: ADD, text: 'ozaki' };
-  //       const expected = { greetings: ['fukushima', 'imaki', 'ozaki'] };
-  //       expect(reducer(state, action)).toEqual(expected);
-  //     });
-  //   });
-
-  //   describe('action typeがREMOVEの場合', () => {
-  //     it('stateに値が入っている場合actionで指定したインデックスの値が削除されていること', () => {
-  //       const state = { greetings: ['ozaki', 'fukushima', 'imaki'] };
-  //       const action = { type: REMOVE, index: 0 };
-  //       const expected = { greetings: ['fukushima', 'imaki'] };
-  //       expect(reducer(state, action)).toEqual(expected);
-  //     });
-  //   });
-  // });
+  describe('reducer', () => {
+    describe('actionが渡されない場合', () => {
+      it('initialStateが返ること', () => {
+        const state = undefined;
+        const expected = {};
+        expect(reducer(state, {})).toEqual(expected);
+      });
+    });
+  });
 });

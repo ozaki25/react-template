@@ -2,9 +2,10 @@
 export const FETCH_REQUEST = 'WEATHER/FETCH_REQUEST';
 export const FETCH_SUCCESS = 'WEATHER/FETCH_SUCCESS';
 export const FETCH_FAILURE = 'WEATHER/FETCH_FAILURE';
+export const FETCH_ERROR = 'WEATHER/FETCH_EERROR';
 
 // Reducer
-const initialState = { greetings: [] };
+const initialState = {};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -13,6 +14,8 @@ export default function reducer(state = initialState, action) {
     case FETCH_SUCCESS:
       return { ...state };
     case FETCH_FAILURE:
+      return { ...state };
+    case FETCH_ERROR:
       return { ...state };
     default:
       return state;
@@ -35,9 +38,16 @@ export function fetchSuccess(body) {
   };
 }
 
-export function fetchFailure(exception) {
+export function fetchFailure(body) {
   return {
     type: FETCH_FAILURE,
+    body,
+  };
+}
+
+export function fetchError(exception) {
+  return {
+    type: FETCH_ERROR,
     exception,
   };
 }
@@ -47,10 +57,14 @@ export function fetchApi() {
     dispatch(fetchRequest());
     try {
       const res = await fetch(api);
-      const body = res.json();
-      await dispatch(fetchSuccess(body));
+      const body = await res.json();
+      if (res.ok) {
+        dispatch(fetchSuccess(body));
+      } else {
+        dispatch(fetchFailure(body));
+      }
     } catch (e) {
-      await dispatch(fetchFailure(e));
+      dispatch(fetchError(e));
     }
   };
 }

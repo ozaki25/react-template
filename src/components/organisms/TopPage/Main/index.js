@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import BasicText from '../../../atoms/BasicText';
-import Link from '../../../atoms/Link';
-import StartReissueButton from '../../../molecules/StartReissueButton';
+import BasicText from 'src/components/atoms/BasicText';
+import LinkText from 'src/components/atoms/LinkText';
+import StartReissueButton from 'src/components/molecules/StartReissueButton';
 
 function Main() {
   return (
     <Container>
       <StartReissueButtonContainer>
-        <StartReissueButton href="/" />
+        <StartReissueButton />
       </StartReissueButtonContainer>
       <BasicText>※今後、本アプリでできる手続を順次拡大していく予定です。</BasicText>
       <LinkContainer>
-        <Link href="#">ライセンスについて</Link>
+        <LinkText>ライセンスについて</LinkText>
       </LinkContainer>
     </Container>
   );

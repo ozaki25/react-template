@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Home from '../containers/HomeContainer';
-import Hello from '../components/pages/Hello';
-import NotFound from '../components/pages/NotFound';
+import Home from 'src/containers/HomeContainer';
+import Hello from 'src/components/pages/Hello';
+import NotFound from 'src/components/pages/NotFound';
 
 export default () => (
   <BrowserRouter>

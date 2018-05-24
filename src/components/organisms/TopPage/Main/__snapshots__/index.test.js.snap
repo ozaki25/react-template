@@ -4,19 +4,18 @@ exports[`should match snapshot: Main 1`] = `
 <styled.section>
   <styled.div>
     <StartReissueButton
-      href="/"
+      href="#"
     />
   </styled.div>
   <BasicText>
     ※今後、本アプリでできる手続を順次拡大していく予定です。
   </BasicText>
   <styled.div>
-    <Link
-      href="#"
+    <LinkText
       onClick={null}
     >
       ライセンスについて
-    </Link>
+    </LinkText>
   </styled.div>
 </styled.section>
 `;

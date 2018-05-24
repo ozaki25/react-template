@@ -1,6 +1,6 @@
 import React from 'react';
-import { snapshot } from '../../../../test/helpers';
-import NavigationBar, { Container, Left, Title, Right } from './';
+import { snapshot } from 'test/helpers';
+import NavigationBar, { Container, Left, Title, Right } from '.';
 
 const props = {
   title: 'タイトル',

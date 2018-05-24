@@ -1,6 +1,6 @@
 import React from 'react';
-import { snapshot } from '../../../../test/helpers';
-import Home from './';
+import { snapshot } from 'test/helpers';
+import Home from '.';
 
 const props = {
   greetings: [],
@@ -16,7 +16,7 @@ const props = {
     },
     error: {},
   },
-  getWether: jest.fn(),
+  getWeather: jest.fn(),
 };
 
 snapshot('Hello', <Home {...props} />);

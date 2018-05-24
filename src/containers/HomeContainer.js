@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { addHello, removeHello } from '../modules/hello';
-import { fetchApi } from '../modules/weather';
-import Home from '../components/pages/Home';
+import { addHello, removeHello } from 'src/modules/hello';
+import { fetchApi } from 'src/modules/weather/';
+import Home from 'src/components/pages/Home';
 
 const mapStateToProps = ({ hello, weather }) => ({
   greetings: hello.greetings,

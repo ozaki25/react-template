@@ -1,6 +1,6 @@
 import React from 'react';
-import { snapshot } from '../../../../test/helpers';
-import LinkText, { Button } from './';
+import { snapshot } from 'test/helpers';
+import LinkText, { Button } from '.';
 
 const props = {
   onClick: jest.fn(),

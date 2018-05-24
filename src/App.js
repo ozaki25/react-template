@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import AppRouter from './router';
-import store from './modules/createStore';
+import AppRouter from 'src/router';
+import store from 'src/modules/createStore';
 
 function App() {
   return (

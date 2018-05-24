@@ -7,11 +7,11 @@ import { action } from '@storybook/addon-actions';
 
 import NavigationBar from '.';
 
-const stories = storiesOf('molecules', module);
+const stories = storiesOf('molecules/NavigationBar', module);
 
 stories
   .add(
-    'NavigationBar/all props',
+    '前進/後退ボタンあり',
     withInfo('NavigationBar')(() => (
       <NavigationBar
         title={text('title', 'タイトル')}
@@ -21,6 +21,6 @@ stories
     )),
   )
   .add(
-    'NavigationBar/minimum props',
+    '前進/後退ボタンなし',
     withInfo('NavigationBar')(() => <NavigationBar title={text('title', 'タイトル')} />),
   );

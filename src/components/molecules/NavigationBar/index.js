@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import NavigationBarLink from '../../atoms/NavigationBarLink';
-import NavigationTitleText from '../../atoms/NavigationTitleText';
+import NavigationBarLink from 'src/components/atoms/NavigationBarLink';
+import NavigationTitleText from 'src/components/atoms/NavigationTitleText';
 
 function NavigationBar({ title, onClickBack, onClickForward }) {
   return (

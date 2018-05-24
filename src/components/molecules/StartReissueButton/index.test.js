@@ -1,6 +1,6 @@
 import React from 'react';
-import { snapshot } from '../../../../test/helpers';
-import StartReissueButton, { Container, Link, Title, Description } from './';
+import { snapshot } from 'test/helpers';
+import StartReissueButton, { Container, Link, Title, Description } from '.';
 
 snapshot('StartReissueButton', <StartReissueButton href="http://google.com/" />);
 snapshot('StartReissueButton/Container', <Container />);

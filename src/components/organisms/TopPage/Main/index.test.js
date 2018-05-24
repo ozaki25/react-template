@@ -1,5 +1,5 @@
 import React from 'react';
-import { snapshot } from '../../../../../test/helpers';
+import { snapshot } from 'test/helpers';
 import Main, { Container, StartReissueButtonContainer, LinkContainer } from '.';
 
 snapshot('Main', <Main />);

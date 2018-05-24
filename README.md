@@ -20,6 +20,10 @@
 
 - jestのテストを実行する
 
+### yarn test:coverage
+
+- jestのテストを実行しカバレッジを表示する
+
 ### yatn precommit
 
 - `git commit`時に実行されるスクリプト

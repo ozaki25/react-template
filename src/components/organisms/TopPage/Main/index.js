@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import BasicText from 'src/components/atoms/BasicText';
-import LinkText from 'src/components/atoms/LinkText';
+import BasicText from 'src/components/atoms/texts/BasicText';
+import LinkText from 'src/components/atoms/texts/LinkText';
 import StartReissueButton from 'src/components/molecules/StartReissueButton';
 
 function Main() {

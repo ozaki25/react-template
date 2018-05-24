@@ -6,7 +6,7 @@ import { text } from '@storybook/addon-knobs';
 
 import BasicText from '.';
 
-const stories = storiesOf('atoms', module);
+const stories = storiesOf('atoms/texts', module);
 
 stories.add(
   'BasicText',

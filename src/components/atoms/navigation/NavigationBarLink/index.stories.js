@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 import NavigationBarLink from '.';
 
-const stories = storiesOf('atoms', module);
+const stories = storiesOf('atoms/navigation', module);
 
 stories.add(
   'NavigationBarLink',

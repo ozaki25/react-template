@@ -6,7 +6,7 @@ import { text } from '@storybook/addon-knobs';
 
 import NavigationTitleText from '.';
 
-const stories = storiesOf('atoms', module);
+const stories = storiesOf('atoms/navigation', module);
 
 stories.add(
   'NavigationTitleText',

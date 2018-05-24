@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 import LinkText from '.';
 
-const stories = storiesOf('atoms', module);
+const stories = storiesOf('atoms/texts', module);
 
 stories.add(
   'LinkText',

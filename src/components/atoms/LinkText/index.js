@@ -2,22 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function NavigationBarLink({ children, onClick }) {
+function LinkText({ children, onClick }) {
   return <Button onClick={onClick}>{children}</Button>;
 }
 
 export const Button = styled.button`
-  font-size: 30px;
-  color: #e70000;
+  color: #666;
+  font-size: 16px;
+  text-decoration: underline;
 `;
 
-NavigationBarLink.propTypes = {
-  onClick: PropTypes.func,
+LinkText.propTypes = {
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
 };
 
-NavigationBarLink.defaultProps = {
+LinkText.defaultProps = {
   onClick: null,
 };
 
-export default NavigationBarLink;
+export default LinkText;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot: LinkText 1`] = `
+<styled.button
+  onClick={[Function]}
+>
+  リンク
+</styled.button>
+`;
+
+exports[`should match snapshot: LinkText/Button 1`] = `
+.c0 {
+  color: #666;
+  font-size: 16px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<button
+  className="c0"
+>
+  リンク
+</button>
+`;

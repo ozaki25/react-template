@@ -6,9 +6,8 @@ exports[`should match snapshot: BasicText 1`] = `
 </styled.p>
 `;
 
-exports[`should match snapshot: BasicText/Text 1`] = `
+exports[`should match snapshot: BasicText/P 1`] = `
 .c0 {
-  margin: 0;
   color: #333;
   font-size: 16px;
 }

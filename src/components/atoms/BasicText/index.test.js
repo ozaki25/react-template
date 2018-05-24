@@ -1,6 +1,6 @@
 import React from 'react';
 import { snapshot } from '../../../../test/helpers';
-import BasicText, { Text } from './';
+import BasicText, { P } from './';
 
 snapshot('BasicText', <BasicText>テキスト</BasicText>);
-snapshot('BasicText/Text', <Text>テキスト</Text>);
+snapshot('BasicText/P', <P>テキスト</P>);

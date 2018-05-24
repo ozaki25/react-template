@@ -1,12 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import P from '../P';
 
 function BasicText({ children }) {
-  return <Text>{children}</Text>;
+  return <P>{children}</P>;
 }
 
-export const Text = P.extend`
+export const P = styled.p`
   color: #333;
   font-size: 16px;
 `;

@@ -10,7 +10,7 @@ const stories = storiesOf('atoms', module);
 
 stories.add(
   'NavigationTitleText',
-  withInfo('NavigationTitleText')(() => (
+  withInfo('ナビゲーションバーのタイトルで使うテキスト')(() => (
     <NavigationTitleText>{text('title', 'タイトル')}</NavigationTitleText>
   )),
 );

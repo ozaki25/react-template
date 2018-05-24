@@ -2,12 +2,11 @@
 
 exports[`should match snapshot: TopPage 1`] = `
 <React.Fragment>
-  <header>
-    アプリメニュー
-  </header>
+  <NavigationBar
+    onClickBack={null}
+    onClickForward={null}
+    title="アプリメニュー"
+  />
   <Main />
-  <footer>
-    ver.1.0.1
-  </footer>
 </React.Fragment>
 `;

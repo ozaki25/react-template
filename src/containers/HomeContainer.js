@@ -11,7 +11,7 @@ const mapStateToProps = ({ hello, weather }) => ({
 const mapDispatchToProps = dispatch => ({
   greet: text => dispatch(addHello(text)),
   bye: index => dispatch(removeHello(index)),
-  getWeather: () => dispatch(fetchApi()),
+  getWeather: () => dispatch(fetchApi()).then(),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

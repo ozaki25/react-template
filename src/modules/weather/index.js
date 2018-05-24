@@ -2,7 +2,7 @@
 export const FETCH_REQUEST = 'WEATHER/FETCH_REQUEST';
 export const FETCH_SUCCESS = 'WEATHER/FETCH_SUCCESS';
 export const FETCH_FAILURE = 'WEATHER/FETCH_FAILURE';
-export const FETCH_ERROR = 'WEATHER/FETCH_EERROR';
+export const FETCH_ERROR = 'WEATHER/FETCH_ERROR';
 
 // Reducer
 const initialState = {
@@ -27,7 +27,8 @@ export default function reducer(state = initialState, action) {
 }
 
 // ActionCreators
-const api = 'http://weather.livedoor.com/forecast/webservice/json/v1?city=130010';
+const api =
+  'http://cors-allow.azurewebsites.net/?url=http://weather.livedoor.com/forecast/webservice/json/v1?city=130010';
 
 export function fetchRequest() {
   return {

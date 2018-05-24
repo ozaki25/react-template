@@ -42,5 +42,20 @@ exports[`should match snapshot: Hello 1`] = `
       Hello
     </button>
   </div>
+  <div>
+    <button
+      type="button"
+    >
+      天気
+    </button>
+    <h1 />
+    <h2>
+      東京都の天気
+    </h2>
+    <pre>
+      晴れ
+    </pre>
+    <p />
+  </div>
 </div>
 `;

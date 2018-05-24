@@ -1,12 +1,12 @@
 import React from 'react';
+import NavigationBar from '../../molecules/NavigationBar';
 import Main from '../../organisms/TopPage/Main';
 
 function TopPage() {
   return (
     <React.Fragment>
-      <header>アプリメニュー</header>
+      <NavigationBar title="アプリメニュー" />
       <Main />
-      <footer>ver.1.0.1</footer>
     </React.Fragment>
   );
 }

@@ -5,3 +5,18 @@ exports[`should match snapshot: NavigationTitleText 1`] = `
   タイトル
 </styled.p>
 `;
+
+exports[`should match snapshot: NavigationTitleText/Text 1`] = `
+.c0 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+<p
+  className="c0"
+>
+  タイトル
+</p>
+`;

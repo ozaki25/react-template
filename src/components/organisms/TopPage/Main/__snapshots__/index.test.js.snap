@@ -13,6 +13,7 @@ exports[`should match snapshot: Main 1`] = `
   <styled.div>
     <Link
       href="#"
+      onClick={null}
     >
       ライセンスについて
     </Link>

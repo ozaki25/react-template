@@ -1,27 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Button from '../Button';
 
-function Link({ href, children }) {
-  return <LinkText href={href}>{children}</LinkText>;
+function Link({ children, onClick }) {
+  return <LinkText onClick={onClick}>{children}</LinkText>;
 }
 
-export const LinkText = styled.a`
+export const LinkText = Button.extend`
   color: #666;
   font-size: 16px;
-  text-decoration: underline;
-  &:active {
-    opacity: 0.5;
-  }
 `;
 
 Link.propTypes = {
-  href: PropTypes.string,
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
 };
 
 Link.defaultProps = {
-  href: '#',
+  onClick: null,
 };
 
 export default Link;

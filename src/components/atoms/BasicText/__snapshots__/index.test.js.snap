@@ -10,6 +10,7 @@ exports[`should match snapshot: BasicText/Text 1`] = `
 .c0 {
   color: #333;
   font-size: 16px;
+  margin: 0;
 }
 
 <p

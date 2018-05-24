@@ -9,6 +9,7 @@ function BasicText({ children }) {
 export const Text = styled.p`
   color: #333;
   font-size: 16px;
+  margin: 0;
 `;
 
 BasicText.propTypes = {

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot: NavigationBar 1`] = `
+<styled.nav>
+  <styled.div>
+    <NavigationBarLink
+      onClick={[Function]}
+    >
+      &lt;
+    </NavigationBarLink>
+  </styled.div>
+  <styled.div>
+    <NavigationTitleText>
+      タイトル
+    </NavigationTitleText>
+  </styled.div>
+  <styled.div>
+    <NavigationBarLink
+      onClick={[Function]}
+    >
+      &gt;
+    </NavigationBarLink>
+  </styled.div>
+</styled.nav>
+`;
+
+exports[`should match snapshot: NavigationBar 2`] = `
+<styled.nav>
+  <styled.div />
+  <styled.div>
+    <NavigationTitleText>
+      タイトル
+    </NavigationTitleText>
+  </styled.div>
+  <styled.div />
+</styled.nav>
+`;
+
+exports[`should match snapshot: NavigationBar/Container 1`] = `
+.c0 {
+  border-bottom: 3px solid #e70000;
+  height: 56px;
+  text-align: center;
+  width: '100%';
+}
+
+<nav
+  className="c0"
+/>
+`;
+
+exports[`should match snapshot: NavigationBar/Left 1`] = `
+.c0 {
+  float: left;
+  padding-top: 10px;
+  width: 50px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`should match snapshot: NavigationBar/Right 1`] = `
+.c0 {
+  float: left;
+  padding-top: 10px;
+  width: 50px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`should match snapshot: NavigationBar/Title 1`] = `
+.c0 {
+  float: left;
+  padding-top: 15px;
+  width: calc(100% - 100px);
+}
+
+<div
+  className="c0"
+/>
+`;

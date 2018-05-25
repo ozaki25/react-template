@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: StartReissueButton 1`] = `
-<styled.div>
-  <styled.a
-    href="http://google.com/"
-  >
-    <styled.div>
-      利用できないキャッシュカードの再発行
-    </styled.div>
-    <styled.div>
-      磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行
-    </styled.div>
-  </styled.a>
-</styled.div>
+<styled.button
+  onClick={[Function]}
+>
+  <styled.p>
+    利用できないキャッシュカードの再発行
+  </styled.p>
+  <styled.p>
+    磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行
+  </styled.p>
+</styled.button>
 `;
 
 exports[`should match snapshot: StartReissueButton/Container 1`] = `
@@ -28,8 +26,9 @@ exports[`should match snapshot: StartReissueButton/Container 1`] = `
   box-shadow: 2px 2px 2px #f5f5f5;
 }
 
-<div
+<button
   className="c0"
+  onClick={[Function]}
 />
 `;
 
@@ -41,25 +40,11 @@ exports[`should match snapshot: StartReissueButton/Description 1`] = `
   text-align: left;
 }
 
-<div
+<p
   className="c0"
 >
   説明
-</div>
-`;
-
-exports[`should match snapshot: StartReissueButton/Link 1`] = `
-.c0 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-<a
-  className="c0"
-  href="http://google.com/"
->
-  リンク
-</a>
+</p>
 `;
 
 exports[`should match snapshot: StartReissueButton/Title 1`] = `
@@ -72,9 +57,9 @@ exports[`should match snapshot: StartReissueButton/Title 1`] = `
   text-align: left;
 }
 
-<div
+<p
   className="c0"
 >
   タイトル
-</div>
+</p>
 `;

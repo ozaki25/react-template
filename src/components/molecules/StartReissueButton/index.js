@@ -2,20 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function StartReissueButton({ href }) {
+function StartReissueButton({ onClick }) {
   return (
-    <Container>
-      <Link href={href}>
-        <Title>利用できないキャッシュカードの再発行</Title>
-        <Description>
-          磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行
-        </Description>
-      </Link>
-    </Container>
+    <Button onClick={onClick}>
+      <Title>利用できないキャッシュカードの再発行</Title>
+      <Description>
+        磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行
+      </Description>
+    </Button>
   );
 }
 
-export const Container = styled.div`
+export const Button = styled.button`
   border: solid 1px #eee;
   box-shadow: 2px 2px 2px #bdbdbd;
   width: 300px;
@@ -26,11 +24,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Link = styled.a`
-  text-decoration: none;
-`;
-
-export const Title = styled.div`
+export const Title = styled.p`
   color: #212121;
   font-size: 14px;
   font-weight: bold;
@@ -39,7 +33,7 @@ export const Title = styled.div`
   text-align: left;
 `;
 
-export const Description = styled.div`
+export const Description = styled.p`
   color: #212121;
   font-size: 12px;
   padding: 10px;
@@ -47,11 +41,11 @@ export const Description = styled.div`
 `;
 
 StartReissueButton.propTypes = {
-  href: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 StartReissueButton.defaultProps = {
-  href: '#',
+  onClick: null,
 };
 
 export default StartReissueButton;

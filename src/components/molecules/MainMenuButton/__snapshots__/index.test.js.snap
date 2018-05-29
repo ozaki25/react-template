@@ -5,15 +5,15 @@ exports[`should match snapshot: StartReissueButton 1`] = `
   onClick={[Function]}
 >
   <styled.p>
-    利用できないキャッシュカードの再発行
+    タイトル
   </styled.p>
   <styled.p>
-    磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行
+    説明
   </styled.p>
 </styled.button>
 `;
 
-exports[`should match snapshot: StartReissueButton/Container 1`] = `
+exports[`should match snapshot: StartReissueButton/Button 1`] = `
 .c0 {
   border: solid 1px #eee;
   box-shadow: 2px 2px 2px #bdbdbd;
@@ -49,10 +49,10 @@ exports[`should match snapshot: StartReissueButton/Description 1`] = `
 
 exports[`should match snapshot: StartReissueButton/Title 1`] = `
 .c0 {
+  background-color: #eee;
   color: #212121;
   font-size: 14px;
   font-weight: bold;
-  background-color: #eee;
   padding: 10px;
   text-align: left;
 }

@@ -2,13 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function StartReissueButton({ onClick }) {
+function MainMenuButton({ title, description, onClick }) {
   return (
     <Button onClick={onClick}>
-      <Title>利用できないキャッシュカードの再発行</Title>
-      <Description>
-        磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行
-      </Description>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
     </Button>
   );
 }
@@ -25,10 +23,10 @@ export const Button = styled.button`
 `;
 
 export const Title = styled.p`
+  background-color: #eee;
   color: #212121;
   font-size: 14px;
   font-weight: bold;
-  background-color: #eee;
   padding: 10px;
   text-align: left;
 `;
@@ -40,12 +38,10 @@ export const Description = styled.p`
   text-align: left;
 `;
 
-StartReissueButton.propTypes = {
-  onClick: PropTypes.func,
+MainMenuButton.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
-StartReissueButton.defaultProps = {
-  onClick: null,
-};
-
-export default StartReissueButton;
+export default MainMenuButton;

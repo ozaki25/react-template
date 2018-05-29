@@ -1,8 +1,12 @@
 import React from 'react';
 import { snapshot } from 'test/helpers';
-import Main, { Container, StartReissueButtonContainer, LinkContainer } from '.';
+import Main, { Container, MainMenuContainer, LinkContainer } from '.';
 
-snapshot('Main', <Main />);
+const props = {
+  onClickStartReissue: jest.fn(),
+};
+
+snapshot('Main', <Main {...props} />);
 snapshot('Main/Container', <Container />);
-snapshot('Main/StartReissueButtonContainer', <StartReissueButtonContainer />);
+snapshot('Main/StartReissueButtonContainer', <MainMenuContainer />);
 snapshot('Main/LinkContainer', <LinkContainer />);

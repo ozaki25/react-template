@@ -3,8 +3,10 @@
 exports[`should match snapshot: Main 1`] = `
 <styled.section>
   <styled.div>
-    <StartReissueButton
-      href="#"
+    <MainMenuButton
+      description="磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行"
+      onClick={[Function]}
+      title="利用できないキャッシュカードの再発行"
     />
   </styled.div>
   <BasicText>

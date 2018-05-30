@@ -15,6 +15,8 @@ export const Button = styled.button`
   box-shadow: 1px 1px 1px #bdbdbd;
   display: inline-block;
   height: 44px;
+  padding-left: 10px;
+  padding-right: 10px;
   width: 300px;
   &:active {
     opacity: 0.5;

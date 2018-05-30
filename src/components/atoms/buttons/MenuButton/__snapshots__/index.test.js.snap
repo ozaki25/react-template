@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: MenuButton 1`] = `
-<styled.button>
-  MenuButton
+<styled.button
+  onClick={[Function]}
+>
+  <styled.p>
+    ボタン
+  </styled.p>
 </styled.button>
 `;

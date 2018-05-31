@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot: SubMenuList 1`] = `
+<styled.ul>
+  <styled.li>
+    <MenuButton
+      onClick={[Function]}
+    >
+      申込履歴の確認
+    </MenuButton>
+  </styled.li>
+  <styled.li>
+    <MenuButton
+      onClick={[Function]}
+    >
+      よくあるご質問
+    </MenuButton>
+  </styled.li>
+  <styled.li>
+    <MenuButton
+      onClick={[Function]}
+    >
+      残高照会・振込等
+    </MenuButton>
+  </styled.li>
+</styled.ul>
+`;
+
+exports[`should match snapshot: SubMenuList/Container 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0;
+}
+
+<ul
+  className="c0"
+/>
+`;
+
+exports[`should match snapshot: SubMenuList/MenuButtonContainer 1`] = `
+.c0 {
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+<li
+  className="c0"
+/>
+`;

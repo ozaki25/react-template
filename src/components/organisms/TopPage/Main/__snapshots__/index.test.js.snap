@@ -8,6 +8,8 @@ exports[`should match snapshot: Main 1`] = `
       onClick={[Function]}
       title="利用できないキャッシュカードの再発行"
     />
+    <styled.hr />
+    <SubMenuList />
   </styled.div>
   <BasicText>
     ※今後、本アプリでできる手続を順次拡大していく予定です。
@@ -32,6 +34,19 @@ exports[`should match snapshot: Main/Container 1`] = `
 />
 `;
 
+exports[`should match snapshot: Main/HR 1`] = `
+.c0 {
+  border: 0;
+  border-top: 1px solid #bdbdbd;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+<hr
+  className="c0"
+/>
+`;
+
 exports[`should match snapshot: Main/LinkContainer 1`] = `
 .c0 {
   text-align: right;
@@ -42,7 +57,7 @@ exports[`should match snapshot: Main/LinkContainer 1`] = `
 />
 `;
 
-exports[`should match snapshot: Main/StartReissueButtonContainer 1`] = `
+exports[`should match snapshot: Main/MenuContainer 1`] = `
 .c0 {
   text-align: center;
 }

@@ -5,17 +5,20 @@ import PropTypes from 'prop-types';
 import BasicText from 'src/components/atoms/texts/BasicText';
 import LinkText from 'src/components/atoms/texts/LinkText';
 import MainMenuButton from 'src/components/molecules/MainMenuButton';
+import SubMenuList from 'src/components/organisms/TopPage/SubMenuList';
 
 function Main({ onClickStartReissue }) {
   return (
     <Container>
-      <MainMenuContainer>
+      <MenuContainer>
         <MainMenuButton
           title="利用できないキャッシュカードの再発行"
           description="磁気不良、ICチップ不良、汚損、破損等で利用できなくなったキャッシュカードの再発行"
           onClick={onClickStartReissue}
         />
-      </MainMenuContainer>
+        <HR />
+        <SubMenuList />
+      </MenuContainer>
       <BasicText>※今後、本アプリでできる手続を順次拡大していく予定です。</BasicText>
       <LinkContainer>
         <LinkText>ライセンスについて</LinkText>
@@ -28,12 +31,19 @@ export const Container = styled.section`
   padding: 15px 10px 20px;
 `;
 
-export const MainMenuContainer = styled.div`
+export const MenuContainer = styled.div`
   text-align: center;
 `;
 
 export const LinkContainer = styled.div`
   text-align: right;
+`;
+
+export const HR = styled.hr`
+  border: 0;
+  border-top: 1px solid #bdbdbd;
+  margin-top: 15px;
+  margin-bottom: 15px;
 `;
 
 Main.propTypes = {

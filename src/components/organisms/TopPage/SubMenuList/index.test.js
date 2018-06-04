@@ -1,7 +1,5 @@
 import React from 'react';
 import { snapshot } from 'test/helpers';
-import SubMenuList, { Container, MenuButtonContainer } from '.';
+import SubMenuList from '.';
 
 snapshot('SubMenuList', <SubMenuList />);
-snapshot('SubMenuList/Container', <Container />);
-snapshot('SubMenuList/MenuButtonContainer', <MenuButtonContainer />);

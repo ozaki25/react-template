@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: LinkText 1`] = `
-<styled.button
-  onClick={[Function]}
->
-  リンク
-</styled.button>
-`;
-
-exports[`should match snapshot: LinkText/Button 1`] = `
 .c0 {
   color: #666;
   font-size: 16px;
@@ -16,9 +8,18 @@ exports[`should match snapshot: LinkText/Button 1`] = `
   text-decoration: underline;
 }
 
-<button
-  className="c0"
+<LinkText
+  onClick={[Function]}
 >
-  リンク
-</button>
+  <styled.button
+    onClick={[Function]}
+  >
+    <button
+      className="c0"
+      onClick={[Function]}
+    >
+      リンク
+    </button>
+  </styled.button>
+</LinkText>
 `;

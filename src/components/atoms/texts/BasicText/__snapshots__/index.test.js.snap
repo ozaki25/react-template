@@ -1,20 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: BasicText 1`] = `
-<styled.p>
-  テキスト
-</styled.p>
-`;
-
-exports[`should match snapshot: BasicText/P 1`] = `
 .c0 {
   color: #333;
   font-size: 16px;
 }
 
-<p
-  className="c0"
->
-  テキスト
-</p>
+<BasicText>
+  <styled.p>
+    <p
+      className="c0"
+    >
+      テキスト
+    </p>
+  </styled.p>
+</BasicText>
 `;

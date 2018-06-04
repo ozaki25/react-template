@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const MenuButton = ({ children, onClick }) => <Button onClick={onClick}>{children}</Button>;
 
-export const Button = styled.button`
+const Button = styled.button`
   border: solid 1px #eee;
   box-shadow: 1px 1px 1px #bdbdbd;
   color: #212121;

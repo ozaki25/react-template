@@ -1,21 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: NavigationTitleText 1`] = `
-<styled.p>
-  タイトル
-</styled.p>
-`;
-
-exports[`should match snapshot: NavigationTitleText/P 1`] = `
 .c0 {
   color: #333;
   font-size: 18px;
   font-weight: bold;
 }
 
-<p
-  className="c0"
->
-  タイトル
-</p>
+<NavigationTitleText>
+  <styled.p>
+    <p
+      className="c0"
+    >
+      タイトル
+    </p>
+  </styled.p>
+</NavigationTitleText>
 `;

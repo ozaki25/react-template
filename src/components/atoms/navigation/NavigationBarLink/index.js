@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function NavigationBarLink({ children, onClick }) {
-  return <Button onClick={onClick}>{children}</Button>;
-}
+const NavigationBarLink = ({ children, onClick }) => <Button onClick={onClick}>{children}</Button>;
 
-export const Button = styled.button`
+const Button = styled.button`
   font-size: 30px;
   color: #e70000;
 `;

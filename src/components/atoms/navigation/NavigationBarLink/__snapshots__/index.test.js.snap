@@ -1,22 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: NavigationBarLink 1`] = `
-<styled.button
-  onClick={[Function]}
->
-  &lt;
-</styled.button>
-`;
-
-exports[`should match snapshot: NavigationBarLink/Button 1`] = `
 .c0 {
   font-size: 30px;
   color: #e70000;
 }
 
-<button
-  className="c0"
+<NavigationBarLink
+  onClick={[Function]}
 >
-  &lt;
-</button>
+  <styled.button
+    onClick={[Function]}
+  >
+    <button
+      className="c0"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+  </styled.button>
+</NavigationBarLink>
 `;

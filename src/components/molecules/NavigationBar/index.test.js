@@ -1,6 +1,6 @@
 import React from 'react';
 import { snapshot } from 'test/helpers';
-import NavigationBar, { Container, Left, Title, Right } from '.';
+import NavigationBar from '.';
 
 const props = {
   title: 'タイトル',
@@ -10,7 +10,3 @@ const props = {
 
 snapshot('NavigationBar', <NavigationBar {...props} />);
 snapshot('NavigationBar', <NavigationBar title="タイトル" />);
-snapshot('NavigationBar/Container', <Container />);
-snapshot('NavigationBar/Left', <Left />);
-snapshot('NavigationBar/Title', <Title />);
-snapshot('NavigationBar/Right', <Right />);

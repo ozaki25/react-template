@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function MainMenuButton({ title, description, onClick }) {
-  return (
-    <Button onClick={onClick}>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-    </Button>
-  );
-}
+const MainMenuButton = ({ title, description, onClick }) => (
+  <Button onClick={onClick}>
+    <Title>{title}</Title>
+    <Description>{description}</Description>
+  </Button>
+);
 
-export const Button = styled.button`
+const Button = styled.button`
   border: solid 1px #eee;
   box-shadow: 2px 2px 2px #bdbdbd;
   width: 300px;
@@ -22,7 +20,7 @@ export const Button = styled.button`
   }
 `;
 
-export const Title = styled.p`
+const Title = styled.p`
   background-color: #eee;
   color: #212121;
   font-size: 14px;
@@ -31,7 +29,7 @@ export const Title = styled.p`
   text-align: left;
 `;
 
-export const Description = styled.p`
+const Description = styled.p`
   color: #212121;
   font-size: 12px;
   padding: 10px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { snapshot } from 'test/helpers';
-import MainMenuButton, { Button, Title, Description } from '.';
+import MainMenuButton from '.';
 
 const title = 'タイトル';
 const description = '説明';
@@ -13,6 +13,3 @@ const props = {
 };
 
 snapshot('StartReissueButton', <MainMenuButton {...props} />);
-snapshot('StartReissueButton/Button', <Button onClick={onClick} />);
-snapshot('StartReissueButton/Title', <Title>{title}</Title>);
-snapshot('StartReissueButton/Description', <Description>{description}</Description>);

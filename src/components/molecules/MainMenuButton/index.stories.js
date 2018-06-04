@@ -5,7 +5,7 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 
-import MainMenuButton from './';
+import MainMenuButton from '.';
 
 const stories = storiesOf('molecules/MainMenuButton', module);
 

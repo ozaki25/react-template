@@ -1,42 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: NavigationBar 1`] = `
-<styled.nav>
-  <styled.div>
-    <NavigationBarLink
-      onClick={[Function]}
-    >
-      &lt;
-    </NavigationBarLink>
-  </styled.div>
-  <styled.div>
-    <NavigationTitleText>
-      タイトル
-    </NavigationTitleText>
-  </styled.div>
-  <styled.div>
-    <NavigationBarLink
-      onClick={[Function]}
-    >
-      &gt;
-    </NavigationBarLink>
-  </styled.div>
-</styled.nav>
-`;
+.c2 {
+  font-size: 30px;
+  color: #e70000;
+}
 
-exports[`should match snapshot: NavigationBar 2`] = `
-<styled.nav>
-  <styled.div />
-  <styled.div>
-    <NavigationTitleText>
-      タイトル
-    </NavigationTitleText>
-  </styled.div>
-  <styled.div />
-</styled.nav>
-`;
+.c4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
 
-exports[`should match snapshot: NavigationBar/Container 1`] = `
 .c0 {
   border-bottom: 3px solid #e70000;
   height: 56px;
@@ -44,43 +19,160 @@ exports[`should match snapshot: NavigationBar/Container 1`] = `
   width: '100%';
 }
 
-<nav
-  className="c0"
-/>
-`;
-
-exports[`should match snapshot: NavigationBar/Left 1`] = `
-.c0 {
+.c1 {
   float: left;
   padding-top: 10px;
   width: 50px;
 }
 
-<div
-  className="c0"
-/>
-`;
-
-exports[`should match snapshot: NavigationBar/Right 1`] = `
-.c0 {
-  float: left;
-  padding-top: 10px;
-  width: 50px;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`should match snapshot: NavigationBar/Title 1`] = `
-.c0 {
+.c3 {
   float: left;
   padding-top: 15px;
   width: calc(100% - 100px);
 }
 
-<div
-  className="c0"
-/>
+.c5 {
+  float: left;
+  padding-top: 10px;
+  width: 50px;
+}
+
+<NavigationBar
+  onClickBack={[Function]}
+  onClickForward={[Function]}
+  title="タイトル"
+>
+  <styled.nav>
+    <nav
+      className="c0"
+    >
+      <styled.div>
+        <div
+          className="c1"
+        >
+          <NavigationBarLink
+            onClick={[Function]}
+          >
+            <styled.button
+              onClick={[Function]}
+            >
+              <button
+                className="c2"
+                onClick={[Function]}
+              >
+                &lt;
+              </button>
+            </styled.button>
+          </NavigationBarLink>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="c3"
+        >
+          <NavigationTitleText>
+            <styled.p>
+              <p
+                className="c4"
+              >
+                タイトル
+              </p>
+            </styled.p>
+          </NavigationTitleText>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="c5"
+        >
+          <NavigationBarLink
+            onClick={[Function]}
+          >
+            <styled.button
+              onClick={[Function]}
+            >
+              <button
+                className="c2"
+                onClick={[Function]}
+              >
+                &gt;
+              </button>
+            </styled.button>
+          </NavigationBarLink>
+        </div>
+      </styled.div>
+    </nav>
+  </styled.nav>
+</NavigationBar>
+`;
+
+exports[`should match snapshot: NavigationBar 2`] = `
+.c3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.c0 {
+  border-bottom: 3px solid #e70000;
+  height: 56px;
+  text-align: center;
+  width: '100%';
+}
+
+.c1 {
+  float: left;
+  padding-top: 10px;
+  width: 50px;
+}
+
+.c2 {
+  float: left;
+  padding-top: 15px;
+  width: calc(100% - 100px);
+}
+
+.c4 {
+  float: left;
+  padding-top: 10px;
+  width: 50px;
+}
+
+<NavigationBar
+  onClickBack={null}
+  onClickForward={null}
+  title="タイトル"
+>
+  <styled.nav>
+    <nav
+      className="c0"
+    >
+      <styled.div>
+        <div
+          className="c1"
+        />
+      </styled.div>
+      <styled.div>
+        <div
+          className="c2"
+        >
+          <NavigationTitleText>
+            <styled.p>
+              <p
+                className="c3"
+              >
+                タイトル
+              </p>
+            </styled.p>
+          </NavigationTitleText>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="c4"
+        />
+      </styled.div>
+    </nav>
+  </styled.nav>
+</NavigationBar>
 `;

@@ -4,8 +4,6 @@ exports[`should match snapshot: MenuButton 1`] = `
 <styled.button
   onClick={[Function]}
 >
-  <styled.p>
-    ボタン
-  </styled.p>
+  ボタン
 </styled.button>
 `;

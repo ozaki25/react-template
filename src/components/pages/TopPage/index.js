@@ -2,13 +2,11 @@ import React from 'react';
 import NavigationBar from 'src/components/molecules/NavigationBar';
 import Main from 'src/components/organisms/TopPage/Main';
 
-function TopPage() {
-  return (
-    <React.Fragment>
-      <NavigationBar title="アプリメニュー" />
-      <Main />
-    </React.Fragment>
-  );
-}
+const TopPage = () => (
+  <React.Fragment>
+    <NavigationBar title="アプリメニュー" />
+    <Main onClickStartReissue={() => console.log('click')} />
+  </React.Fragment>
+);
 
 export default TopPage;

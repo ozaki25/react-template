@@ -1,62 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: Hello 1`] = `
-<div
-  className="Home"
->
-  <header
-    className="Home-header"
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <img
-      alt="logo"
-      className="Home-logo"
-      src="logo.svg"
-    />
-    <h1
-      className="Home-title"
+    <Home
+      bye={[Function]}
+      getWeather={[Function]}
+      greet={[Function]}
+      greetings={Array []}
+      weather={
+        Object {
+          "body": Object {
+            "description": Object {
+              "text": "晴れ",
+            },
+            "title": "東京都の天気",
+          },
+          "error": Object {},
+          "loading": false,
+        }
+      }
     >
-      Welcome to React
-    </h1>
-  </header>
-  <p
-    className="Home-intro"
-  >
-    To get started, edit 
-    <code>
-      src/Home.js
-    </code>
-     and save to reload.
-  </p>
-  <Link
-    replace={false}
-    to="/hello"
-  >
-    Hello!
-  </Link>
-  <div>
-    <input />
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      Hello
-    </button>
-  </div>
-  <div>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      天気
-    </button>
-    <h1 />
-    <h2>
-      東京都の天気
-    </h2>
-    <pre>
-      晴れ
-    </pre>
-    <p />
-  </div>
-</div>
+      <div
+        className="Home"
+      >
+        <header
+          className="Home-header"
+        >
+          <img
+            alt="logo"
+            className="Home-logo"
+            src="logo.svg"
+          />
+          <h1
+            className="Home-title"
+          >
+            Welcome to React
+          </h1>
+        </header>
+        <p
+          className="Home-intro"
+        >
+          To get started, edit 
+          <code>
+            src/Home.js
+          </code>
+           and save to reload.
+        </p>
+        <Link
+          replace={false}
+          to="/hello"
+        >
+          <a
+            href="/hello"
+            onClick={[Function]}
+          >
+            Hello!
+          </a>
+        </Link>
+        <div>
+          <input />
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            Hello
+          </button>
+        </div>
+        <div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            天気
+          </button>
+          <h1 />
+          <h2>
+            東京都の天気
+          </h2>
+          <pre>
+            晴れ
+          </pre>
+          <p />
+        </div>
+      </div>
+    </Home>
+  </Router>
+</BrowserRouter>
 `;

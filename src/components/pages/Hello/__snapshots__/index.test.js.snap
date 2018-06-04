@@ -1,17 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: Hello 1`] = `
-<main>
-  <section>
-    <h1>
-      Hello
-    </h1>
-    <Link
-      replace={false}
-      to="/"
-    >
-      HOME
-    </Link>
-  </section>
-</main>
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Hello>
+      <main>
+        <section>
+          <h1>
+            Hello
+          </h1>
+          <Link
+            replace={false}
+            to="/"
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              HOME
+            </a>
+          </Link>
+        </section>
+      </main>
+    </Hello>
+  </Router>
+</BrowserRouter>
 `;

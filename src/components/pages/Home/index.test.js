@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { snapshot } from 'test/helpers';
 import Home from '.';
 
@@ -19,4 +20,9 @@ const props = {
   getWeather: jest.fn(),
 };
 
-snapshot('Hello', <Home {...props} />);
+snapshot(
+  'Hello',
+  <BrowserRouter>
+    <Home {...props} />
+  </BrowserRouter>,
+);

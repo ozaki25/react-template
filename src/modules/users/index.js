@@ -1,34 +1,29 @@
 // Actions
-export const FETCH_REQUEST = 'USERS/FETCH_REQUEST';
-export const FETCH_SUCCESS = 'USERS/FETCH_SUCCESS';
-export const FETCH_FAILURE = 'USERS/FETCH_FAILURE';
-export const FETCH_ERROR = 'USERS/FETCH_ERROR';
+export const POST_REQUEST = 'USERS/POST_REQUEST';
+export const POST_DONE = 'USERS/POST_DONE';
+export const POST_ERROR = 'USERS/POST_ERROR';
 
 // Reducer
 const initialState = {
-  payload: {
-    loading: false,
-    body: {},
-  },
-  error: {},
+  loading: false,
+  body: {},
+  status: null,
+  exception: {},
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_REQUEST:
-      return { payload: { ...state.payload, loading: true }, error: {} };
-    case FETCH_SUCCESS:
+    case POST_REQUEST:
+      return { ...state, loading: true, body: {} };
+    case POST_DONE:
       return {
-        payload: { ...state.payload, loading: false, body: action.body },
-        error: {},
+        ...state,
+        loading: false,
+        body: action.payload.body,
+        status: action.payload.status,
       };
-    case FETCH_FAILURE:
-      return {
-        payload: { ...state.payload, loading: false, body: action.body },
-        error: {},
-      };
-    case FETCH_ERROR:
-      return { payload: { ...state.payload, loading: false }, error: action.exception };
+    case POST_ERROR:
+      return { ...state, loading: false, exception: action.payload };
     default:
       return state;
   }
@@ -37,46 +32,37 @@ export default function reducer(state = initialState, action) {
 // ActionCreators
 const api = 'http://localhost:3003/users';
 
-export function fetchRequest() {
+export function postRequest() {
   return {
-    type: FETCH_REQUEST,
+    type: POST_REQUEST,
   };
 }
 
-export function fetchSuccess(body) {
+export function postDone(body, status) {
   return {
-    type: FETCH_SUCCESS,
-    body,
+    type: POST_DONE,
+    payload: { body, status },
   };
 }
 
-export function fetchFailure(body) {
+export function postError(exception) {
   return {
-    type: FETCH_FAILURE,
-    body,
+    type: POST_ERROR,
+    payload: exception,
+    error: true,
   };
 }
 
-export function fetchError(exception) {
-  return {
-    type: FETCH_ERROR,
-    exception,
-  };
-}
-
-export function doFetch() {
+export function postUser() {
   return async (dispatch) => {
-    dispatch(fetchRequest());
+    dispatch(postRequest());
     try {
       const res = await fetch(api, { method: 'post' });
       const body = await res.json();
-      if (res.ok) {
-        dispatch(fetchSuccess(body));
-      } else {
-        dispatch(fetchFailure(body));
-      }
+      const { status } = res;
+      dispatch(postDone(body, status));
     } catch (e) {
-      dispatch(fetchError(e));
+      dispatch(postError(e));
     }
   };
 }

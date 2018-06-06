@@ -2,15 +2,13 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import reducer, {
-  fetchRequest,
-  fetchSuccess,
-  fetchFailure,
-  fetchError,
-  doFetch,
-  FETCH_REQUEST,
-  FETCH_SUCCESS,
-  FETCH_FAILURE,
-  FETCH_ERROR,
+  postRequest,
+  postDone,
+  postError,
+  postUser,
+  POST_REQUEST,
+  POST_DONE,
+  POST_ERROR,
 } from '.';
 
 const middlewares = [thunk];
@@ -23,74 +21,103 @@ describe('Users', () => {
       fetchMock.restore();
     });
 
-    it('should create an action to fetch request', () => {
+    it('should create an action to post request', () => {
       const expectedAction = {
-        type: FETCH_REQUEST,
+        type: POST_REQUEST,
       };
-      expect(fetchRequest()).toEqual(expectedAction);
+      expect(postRequest()).toEqual(expectedAction);
     });
 
-    it('should create an action to fetch success', () => {
+    it('should create an action to post success', () => {
       const body = {};
+      const status = 200;
       const expectedAction = {
-        type: FETCH_SUCCESS,
-        body,
+        type: POST_DONE,
+        payload: { body, status },
       };
-      expect(fetchSuccess(body)).toEqual(expectedAction);
+      expect(postDone(body, status)).toEqual(expectedAction);
     });
 
-    it('should create an action to fetch failure', () => {
+    it('should create an action to post failure', () => {
       const body = {};
+      const status = 500;
       const expectedAction = {
-        type: FETCH_FAILURE,
-        body,
+        type: POST_DONE,
+        payload: { body, status },
       };
-      expect(fetchFailure(body)).toEqual(expectedAction);
+      expect(postDone(body, status)).toEqual(expectedAction);
     });
 
-    it('should create an action to fetch error', () => {
-      const exception = {};
+    it('should create an action to post error', () => {
+      const exception = new Error();
       const expectedAction = {
-        type: FETCH_ERROR,
-        exception,
+        type: POST_ERROR,
+        payload: exception,
+        error: true,
       };
-      expect(fetchError(exception)).toEqual(expectedAction);
+      expect(postError(exception)).toEqual(expectedAction);
     });
 
-    it('should create an action to fetch result success', async () => {
-      const expectedActions = [
-        { type: FETCH_REQUEST },
-        { type: FETCH_SUCCESS, body: { title: '東京都 東京 の天気' } },
-      ];
-      const store = mockStore();
+    it('should create an action to post result success', async () => {
       fetchMock.postOnce('*', {
-        body: { title: '東京都 東京 の天気' },
+        body: { id: 'ABC123' },
+        status: 200,
         headers: { 'content-type': 'application/json' },
       });
-      await store.dispatch(doFetch());
+
+      const store = mockStore();
+      await store.dispatch(postUser());
+
+      const expectedActions = [
+        { type: POST_REQUEST },
+        {
+          type: POST_DONE,
+          payload: {
+            body: { id: 'ABC123' },
+            status: 200,
+          },
+        },
+      ];
       return expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create an action to fetch result failure', async () => {
-      const expectedActions = [{ type: FETCH_REQUEST }, { type: FETCH_FAILURE, body: {} }];
-      const store = mockStore();
+    it('should create an action to post result failure', async () => {
       fetchMock.postOnce('*', {
+        body: { message: 'internal server error' },
         status: 500,
-        body: {},
         headers: { 'content-type': 'application/json' },
       });
-      await store.dispatch(doFetch());
+
+      const store = mockStore();
+      await store.dispatch(postUser());
+
+      const expectedActions = [
+        { type: POST_REQUEST },
+        {
+          type: POST_DONE,
+          payload: {
+            body: { message: 'internal server error' },
+            status: 500,
+          },
+        },
+      ];
       return expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create an action to fetch result error', async () => {
-      const expectedActions = [
-        { type: FETCH_REQUEST },
-        { type: FETCH_ERROR, exception: new Error('error') },
-      ];
+    it('should create an action to post result error', async () => {
       fetchMock.postOnce('*', Promise.reject(new Error('error')));
+
       const store = mockStore();
-      await store.dispatch(doFetch());
+      await store.dispatch(postUser());
+
+      const expectedActions = [
+        { type: POST_REQUEST },
+        {
+          type: POST_ERROR,
+          payload: new Error('error'),
+          error: true,
+        },
+      ];
       return expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -99,49 +126,49 @@ describe('Users', () => {
     describe('actionが渡されない場合', () => {
       it('initialStateが返ること', () => {
         const state = undefined;
-        const expected = { payload: { body: {}, loading: false }, error: {} };
-        expect(reducer(state, {})).toEqual(expected);
+        const action = {};
+        const expected = {
+          loading: false,
+          body: {},
+          status: null,
+          exception: {},
+        };
+        expect(reducer(state, action)).toEqual(expected);
       });
     });
 
-    describe('action typeがFETCH_REQUESTの場合', () => {
+    describe('action typeがPOST_REQUESTの場合', () => {
       it('loadingがtrueになっていること', () => {
         const state = undefined;
-        const action = { type: FETCH_REQUEST };
-        const expected = { payload: { body: {}, loading: true }, error: {} };
+        const action = { type: POST_REQUEST };
+        const expected = { body: {}, loading: true };
         expect(reducer(state, action)).toEqual(expected);
       });
     });
 
-    describe('action typeがFETCH_SUCCESSの場合', () => {
+    describe('action typeがPOST_SUCCESSの場合', () => {
       it('loadingがfalseでbodyに値がセットされていること', () => {
-        const state = { body: {}, error: {}, loading: true };
-        const action = { type: FETCH_SUCCESS, body: { id: 'ABC123' } };
-        const expected = { payload: { body: { id: 'ABC123' }, loading: false }, error: {} };
+        const state = { body: {}, exception: {}, loading: true };
+        const action = { type: POST_DONE, body: { id: 'ABC123' } };
+        const expected = { body: { id: 'ABC123' }, loading: false };
         expect(reducer(state, action)).toEqual(expected);
       });
     });
 
-    describe('action typeがFETCH_FAILUREの場合', () => {
+    describe('action typeがPOST_FAILUREの場合', () => {
       it('loadingがfalseでbodyに値がセットされていること', () => {
-        const state = { body: {}, error: {}, loading: true };
-        const action = { type: FETCH_FAILURE, body: { message: 'page not found' } };
-        const expected = {
-          payload: { body: { message: 'page not found' }, loading: false },
-          error: {},
-        };
+        const state = { body: {}, exceptions: {}, loading: true };
+        const action = { type: POST_DONE, body: { message: 'page not found' } };
+        const expected = { body: { message: 'page not found' }, loading: false };
         expect(reducer(state, action)).toEqual(expected);
       });
     });
 
-    describe('action typeがFETCH_ERRORの場合', () => {
+    describe('action typeがPOST_ERRORの場合', () => {
       it('loadingがfalseでerrorに値がセットされていること', () => {
-        const state = { body: {}, error: {}, loading: true };
-        const action = { type: FETCH_ERROR, exception: new Error('error') };
-        const expected = {
-          payload: { body: {}, loading: false },
-          error: new Error('error'),
-        };
+        const state = { body: {}, exception: {}, loading: true };
+        const action = { type: POST_ERROR, exception: new Error('error') };
+        const expected = { body: new Error('error'), loading: false };
         expect(reducer(state, action)).toEqual(expected);
       });
     });

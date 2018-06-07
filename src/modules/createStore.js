@@ -9,13 +9,6 @@ if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
 }
 
-const store = createStore(
-  reducer,
-  compose(
-    applyMiddleware(...middleware),
-    // eslint-disable-next-line no-underscore-dangle
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  ),
-);
+const store = createStore(reducer, compose(applyMiddleware(...middleware)));
 
 export default store;

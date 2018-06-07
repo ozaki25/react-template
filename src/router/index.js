@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import TopPage from 'src/components/pages/TopPage';
+import TopPage from 'src/containers/TopPageContainer';
 import Home from 'src/containers/HomeContainer';
 import Hello from 'src/components/pages/Hello';
 import NotFound from 'src/components/pages/NotFound';

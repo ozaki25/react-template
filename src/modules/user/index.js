@@ -57,7 +57,10 @@ export function postUser() {
   return async (dispatch) => {
     dispatch(postRequest());
     try {
-      const res = await fetch(api, { method: 'post' });
+      const res = await fetch(api, {
+        method: 'post',
+        headers: { 'content-type': 'application/json' },
+      });
       const body = await res.json();
       const { status } = res;
       dispatch(postDone(body, status));

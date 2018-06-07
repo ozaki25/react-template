@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import users from 'users';
+import user from './user';
 import hello from './hello';
 import weather from './weather';
 
 const reducer = combineReducers({
-  users,
+  user,
   hello,
   weather,
 });

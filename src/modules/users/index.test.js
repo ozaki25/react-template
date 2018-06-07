@@ -142,34 +142,25 @@ describe('Users', () => {
         const state = undefined;
         const action = { type: POST_REQUEST };
         const expected = { body: {}, loading: true };
-        expect(reducer(state, action)).toEqual(expected);
+        expect(reducer(state, action)).toMatchObject(expected);
       });
     });
 
-    describe('action typeがPOST_SUCCESSの場合', () => {
+    describe('action typeがPOST_DONEの場合', () => {
       it('loadingがfalseでbodyに値がセットされていること', () => {
         const state = { body: {}, exception: {}, loading: true };
-        const action = { type: POST_DONE, body: { id: 'ABC123' } };
+        const action = { type: POST_DONE, payload: { body: { id: 'ABC123' } } };
         const expected = { body: { id: 'ABC123' }, loading: false };
-        expect(reducer(state, action)).toEqual(expected);
-      });
-    });
-
-    describe('action typeがPOST_FAILUREの場合', () => {
-      it('loadingがfalseでbodyに値がセットされていること', () => {
-        const state = { body: {}, exceptions: {}, loading: true };
-        const action = { type: POST_DONE, body: { message: 'page not found' } };
-        const expected = { body: { message: 'page not found' }, loading: false };
-        expect(reducer(state, action)).toEqual(expected);
+        expect(reducer(state, action)).toMatchObject(expected);
       });
     });
 
     describe('action typeがPOST_ERRORの場合', () => {
       it('loadingがfalseでerrorに値がセットされていること', () => {
         const state = { body: {}, exception: {}, loading: true };
-        const action = { type: POST_ERROR, exception: new Error('error') };
-        const expected = { body: new Error('error'), loading: false };
-        expect(reducer(state, action)).toEqual(expected);
+        const action = { type: POST_ERROR, payload: new Error('error') };
+        const expected = { exception: new Error('error'), loading: false };
+        expect(reducer(state, action)).toMatchObject(expected);
       });
     });
   });

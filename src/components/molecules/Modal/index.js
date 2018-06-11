@@ -18,12 +18,11 @@ function Modal({
 }
 
 const Container = styled.div`
-  background-color: #000;
+  background-color: #0009;
   border: none;
   height: 100%;
   left: 0;
   margin: 0;
-  opacity: 0.6;
   position: fixed;
   top: 0;
   width: 100%;
@@ -33,7 +32,6 @@ const DialogContainer = styled.div`
   margin-top: 70%;
   margin-left: 15px;
   margin-right: 15px;
-  opacity: 1;
 `;
 
 Modal.propTypes = {

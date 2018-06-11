@@ -42,12 +42,11 @@ exports[`should match snapshot: Modal 1`] = `
 }
 
 .c0 {
-  background-color: #000;
+  background-color: #0009;
   border: none;
   height: 100%;
   left: 0;
   margin: 0;
-  opacity: 0.6;
   position: fixed;
   top: 0;
   width: 100%;

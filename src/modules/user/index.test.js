@@ -117,7 +117,7 @@ describe('User', () => {
           loading: false,
           body: {},
           status: null,
-          exception: {},
+          exception: null,
         };
         expect(reducer(state, action)).toEqual(expected);
       });
@@ -131,7 +131,7 @@ describe('User', () => {
           loading: true,
           body: {},
           status: null,
-          exception: {},
+          exception: null,
         };
         expect(reducer(state, action)).toEqual(expected);
       });
@@ -139,13 +139,13 @@ describe('User', () => {
 
     describe('action typeがPOST_DONEの場合', () => {
       it('loadingがfalseでbodyに値がセットされていること', () => {
-        const state = { body: {}, exception: {}, loading: true };
+        const state = { body: {}, exception: null, loading: true };
         const action = { type: POST_DONE, payload: { body: { id: 'ABC123' }, status: 200 } };
         const expected = {
           loading: false,
           body: { id: 'ABC123' },
           status: 200,
-          exception: {},
+          exception: null,
         };
         expect(reducer(state, action)).toEqual(expected);
       });
@@ -153,7 +153,7 @@ describe('User', () => {
 
     describe('action typeがPOST_ERRORの場合', () => {
       it('loadingがfalseでerrorに値がセットされていること', () => {
-        const state = { body: {}, exception: {}, loading: true };
+        const state = { body: {}, exception: null, loading: true };
         const action = { type: POST_ERROR, payload: new Error('error') };
         const expected = { loading: false, body: {}, exception: new Error('error') };
         expect(reducer(state, action)).toEqual(expected);

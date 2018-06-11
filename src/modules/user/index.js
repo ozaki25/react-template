@@ -8,7 +8,7 @@ const initialState = {
   loading: false,
   body: {},
   status: null,
-  exception: {},
+  exception: null,
 };
 
 export default function reducer(state = initialState, action) {
@@ -19,7 +19,7 @@ export default function reducer(state = initialState, action) {
         loading: true,
         body: {},
         status: null,
-        exception: {},
+        exception: null,
       };
     case POST_DONE:
       return {

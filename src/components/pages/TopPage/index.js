@@ -6,6 +6,9 @@ import NavigationBar from 'src/components/molecules/NavigationBar';
 import Modal from 'src/components/molecules/Modal';
 import Main from 'src/components/organisms/TopPage/Main';
 
+// こいつの行き場はどこか。というかresponse.ok()そのまま使いたい。
+const isSuccess = status => status && (status >= 200 || status < 300);
+
 class TopPage extends React.Component {
   componentDidMount() {
     this.props.postUser();
@@ -20,16 +23,20 @@ class TopPage extends React.Component {
       },
       postUser,
     } = this.props;
+    console.log(`userID: ${body.id}`);
     return (
       <React.Fragment>
         <NavigationBar title="アプリメニュー" />
         <Main onClickStartReissue={this.navigateHome} />
         <Loading show={loading} />
-        <p>{status >= 200 && status < 300 ? body.id : body.error}</p>
-        <p>{exception.message}</p>
-        {status && status !== 200 ? (
+        {isSuccess(status) ? null : (
           <Modal title="通信エラー" onClick={postUser} buttonLabel="OK">
-            失敗しました。リトライします。
+            通信に失敗しました。リトライします。
+          </Modal>
+        )}
+        {exception ? (
+          <Modal title="通信エラー" onClick={postUser} buttonLabel="OK">
+            通信エラーが発生しました\n電波の良いところで再実行して下さい。
           </Modal>
         ) : null}
       </React.Fragment>

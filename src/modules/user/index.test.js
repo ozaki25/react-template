@@ -141,17 +141,27 @@ describe('Users', () => {
       it('loadingがtrueになっていること', () => {
         const state = undefined;
         const action = { type: POST_REQUEST };
-        const expected = { body: {}, loading: true };
-        expect(reducer(state, action)).toMatchObject(expected);
+        const expected = {
+          loading: true,
+          body: {},
+          status: null,
+          exception: {},
+        };
+        expect(reducer(state, action)).toEqual(expected);
       });
     });
 
     describe('action typeがPOST_DONEの場合', () => {
       it('loadingがfalseでbodyに値がセットされていること', () => {
         const state = { body: {}, exception: {}, loading: true };
-        const action = { type: POST_DONE, payload: { body: { id: 'ABC123' } } };
-        const expected = { body: { id: 'ABC123' }, loading: false };
-        expect(reducer(state, action)).toMatchObject(expected);
+        const action = { type: POST_DONE, payload: { body: { id: 'ABC123' }, status: 200 } };
+        const expected = {
+          loading: false,
+          body: { id: 'ABC123' },
+          status: 200,
+          exception: {},
+        };
+        expect(reducer(state, action)).toEqual(expected);
       });
     });
 
@@ -159,8 +169,8 @@ describe('Users', () => {
       it('loadingがfalseでerrorに値がセットされていること', () => {
         const state = { body: {}, exception: {}, loading: true };
         const action = { type: POST_ERROR, payload: new Error('error') };
-        const expected = { exception: new Error('error'), loading: false };
-        expect(reducer(state, action)).toMatchObject(expected);
+        const expected = { loading: false, body: {}, exception: new Error('error') };
+        expect(reducer(state, action)).toEqual(expected);
       });
     });
   });

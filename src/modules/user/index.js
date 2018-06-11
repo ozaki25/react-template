@@ -14,7 +14,13 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case POST_REQUEST:
-      return { ...state, loading: true, body: {} };
+      return {
+        ...state,
+        loading: true,
+        body: {},
+        status: null,
+        exception: {},
+      };
     case POST_DONE:
       return {
         ...state,

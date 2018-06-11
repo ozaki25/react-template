@@ -33,6 +33,7 @@ const DialogContainer = styled.div`
   margin-top: 70%;
   margin-left: 15px;
   margin-right: 15px;
+  opacity: 1;
 `;
 
 Modal.propTypes = {

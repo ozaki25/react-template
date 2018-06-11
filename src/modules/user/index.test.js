@@ -14,7 +14,7 @@ import reducer, {
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('Users', () => {
+describe('User', () => {
   describe('actions', () => {
     afterEach(() => {
       fetchMock.reset();
@@ -29,7 +29,7 @@ describe('Users', () => {
     });
 
     it('should create an action to post success', () => {
-      const body = {};
+      const body = { id: 'ABC123' };
       const status = 200;
       const expectedAction = {
         type: POST_DONE,
@@ -39,7 +39,7 @@ describe('Users', () => {
     });
 
     it('should create an action to post failure', () => {
-      const body = {};
+      const body = { error: 'Something failed!' };
       const status = 500;
       const expectedAction = {
         type: POST_DONE,
@@ -59,47 +59,33 @@ describe('Users', () => {
     });
 
     it('should create an action to post result success', async () => {
-      fetchMock.postOnce('*', {
-        body: { id: 'ABC123' },
-        status: 200,
-        headers: { 'content-type': 'application/json' },
-      });
+      const body = { id: 'ABC123' };
+      const status = 200;
+
+      fetchMock.postOnce('*', { body, status, headers: { 'content-type': 'application/json' } });
 
       const store = mockStore();
       await store.dispatch(postUser());
 
       const expectedActions = [
         { type: POST_REQUEST },
-        {
-          type: POST_DONE,
-          payload: {
-            body: { id: 'ABC123' },
-            status: 200,
-          },
-        },
+        { type: POST_DONE, payload: { body, status } },
       ];
       return expect(store.getActions()).toEqual(expectedActions);
     });
 
     it('should create an action to post result failure', async () => {
-      fetchMock.postOnce('*', {
-        body: { message: 'internal server error' },
-        status: 500,
-        headers: { 'content-type': 'application/json' },
-      });
+      const body = { message: 'internal server error' };
+      const status = 500;
+
+      fetchMock.postOnce('*', { body, status, headers: { 'content-type': 'application/json' } });
 
       const store = mockStore();
       await store.dispatch(postUser());
 
       const expectedActions = [
         { type: POST_REQUEST },
-        {
-          type: POST_DONE,
-          payload: {
-            body: { message: 'internal server error' },
-            status: 500,
-          },
-        },
+        { type: POST_DONE, payload: { body, status } },
       ];
       return expect(store.getActions()).toEqual(expectedActions);
     });

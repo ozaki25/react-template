@@ -7,7 +7,7 @@ export const POST_ERROR = 'USERS/POST_ERROR';
 const initialState = {
   loading: false,
   body: {},
-  status: null,
+  success: null,
   exception: null,
 };
 
@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         loading: true,
         body: {},
-        status: null,
+        success: null,
         exception: null,
       };
     case POST_DONE:
@@ -26,7 +26,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         loading: false,
         body: action.payload.body,
-        status: action.payload.status,
+        success: action.payload.success,
       };
     case POST_ERROR:
       return { ...state, loading: false, exception: action.payload };
@@ -44,10 +44,10 @@ export function postRequest() {
   };
 }
 
-export function postDone(body, status) {
+export function postDone(body, success) {
   return {
     type: POST_DONE,
-    payload: { body, status },
+    payload: { body, success },
   };
 }
 
@@ -68,8 +68,8 @@ export function postUser() {
         headers: { 'content-type': 'application/json' },
       });
       const body = await res.json();
-      const { status } = res;
-      dispatch(postDone(body, status));
+      const success = res.ok;
+      dispatch(postDone(body, success));
     } catch (e) {
       dispatch(postError(e));
     }

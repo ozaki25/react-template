@@ -30,22 +30,22 @@ describe('User', () => {
 
     it('should create an action to post success', () => {
       const body = { id: 'ABC123' };
-      const status = 200;
+      const success = true;
       const expectedAction = {
         type: POST_DONE,
-        payload: { body, status },
+        payload: { body, success },
       };
-      expect(postDone(body, status)).toEqual(expectedAction);
+      expect(postDone(body, success)).toEqual(expectedAction);
     });
 
     it('should create an action to post failure', () => {
       const body = { error: 'Something failed!' };
-      const status = 500;
+      const success = false;
       const expectedAction = {
         type: POST_DONE,
-        payload: { body, status },
+        payload: { body, success },
       };
-      expect(postDone(body, status)).toEqual(expectedAction);
+      expect(postDone(body, success)).toEqual(expectedAction);
     });
 
     it('should create an action to post error', () => {
@@ -69,7 +69,7 @@ describe('User', () => {
 
       const expectedActions = [
         { type: POST_REQUEST },
-        { type: POST_DONE, payload: { body, status } },
+        { type: POST_DONE, payload: { body, success: true } },
       ];
       return expect(store.getActions()).toEqual(expectedActions);
     });
@@ -85,7 +85,7 @@ describe('User', () => {
 
       const expectedActions = [
         { type: POST_REQUEST },
-        { type: POST_DONE, payload: { body, status } },
+        { type: POST_DONE, payload: { body, success: false } },
       ];
       return expect(store.getActions()).toEqual(expectedActions);
     });
@@ -116,7 +116,7 @@ describe('User', () => {
         const expected = {
           loading: false,
           body: {},
-          status: null,
+          success: null,
           exception: null,
         };
         expect(reducer(state, action)).toEqual(expected);
@@ -130,7 +130,7 @@ describe('User', () => {
         const expected = {
           loading: true,
           body: {},
-          status: null,
+          success: null,
           exception: null,
         };
         expect(reducer(state, action)).toEqual(expected);
@@ -140,11 +140,11 @@ describe('User', () => {
     describe('action typeがPOST_DONEの場合', () => {
       it('loadingがfalseでbodyに値がセットされていること', () => {
         const state = { body: {}, exception: null, loading: true };
-        const action = { type: POST_DONE, payload: { body: { id: 'ABC123' }, status: 200 } };
+        const action = { type: POST_DONE, payload: { body: { id: 'ABC123' }, success: true } };
         const expected = {
           loading: false,
           body: { id: 'ABC123' },
-          status: 200,
+          success: true,
           exception: null,
         };
         expect(reducer(state, action)).toEqual(expected);

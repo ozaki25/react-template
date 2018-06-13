@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import BasicText from 'src/components/atoms/texts/BasicText';
-import LinkText from 'src/components/atoms/texts/LinkText';
+import Link from 'src/components/atoms/buttons/Link';
 import MainMenuButton from 'src/components/molecules/MainMenuButton';
 import SubMenuList from 'src/components/organisms/TopPage/SubMenuList';
 
@@ -20,7 +20,7 @@ const Main = ({ onClickStartReissue }) => (
     </MenuContainer>
     <BasicText>※今後、本アプリでできる手続を順次拡大していく予定です。</BasicText>
     <LinkContainer>
-      <LinkText>ライセンスについて</LinkText>
+      <Link>ライセンスについて</Link>
     </LinkContainer>
   </Container>
 );

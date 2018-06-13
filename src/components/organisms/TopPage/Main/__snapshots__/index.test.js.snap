@@ -4,6 +4,7 @@ exports[`should match snapshot: Main 1`] = `
 .c9 {
   color: #333;
   font-size: 16px;
+  font-weight: nomal;
 }
 
 .c11 {
@@ -204,8 +205,14 @@ exports[`should match snapshot: Main 1`] = `
           </SubMenuList>
         </div>
       </styled.div>
-      <BasicText>
-        <styled.p>
+      <BasicText
+        emphasis={false}
+        red={false}
+      >
+        <styled.p
+          emphasis={false}
+          red={false}
+        >
           <p
             className="c9"
           >
@@ -217,7 +224,7 @@ exports[`should match snapshot: Main 1`] = `
         <div
           className="c10"
         >
-          <LinkText
+          <Link
             onClick={null}
           >
             <styled.button
@@ -230,7 +237,7 @@ exports[`should match snapshot: Main 1`] = `
                 ライセンスについて
               </button>
             </styled.button>
-          </LinkText>
+          </Link>
         </div>
       </styled.div>
     </section>

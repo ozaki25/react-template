@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: Modal 1`] = `
+.c8 {
+  background-color: #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  height: 44px;
+  width: 150px;
+}
+
 .c2 {
   background-color: #f5f5f5;
   border-radius: 4px;
@@ -30,15 +40,6 @@ exports[`should match snapshot: Modal 1`] = `
 .c7 {
   margin-bottom: 5px;
   margin-top: 5px;
-}
-
-.c8 {
-  background-color: #333;
-  border-radius: 4px;
-  color: #f5f5f5;
-  font-size: 16px;
-  height: 44px;
-  width: 150px;
 }
 
 .c0 {
@@ -110,16 +111,29 @@ exports[`should match snapshot: Modal 1`] = `
                   <div
                     className="c7"
                   >
-                    <styled.button
+                    <BasicButton
+                      disabled={false}
                       onClick={[Function]}
+                      red={false}
+                      small={false}
+                      xsmall={true}
                     >
-                      <button
-                        className="c8"
+                      <styled.button
+                        disabled={false}
                         onClick={[Function]}
+                        red={false}
+                        small={false}
+                        xsmall={true}
                       >
-                        OK
-                      </button>
-                    </styled.button>
+                        <button
+                          className="c8"
+                          disabled={false}
+                          onClick={[Function]}
+                        >
+                          OK
+                        </button>
+                      </styled.button>
+                    </BasicButton>
                   </div>
                 </styled.div>
               </div>

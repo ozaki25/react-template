@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import BasicButton from 'src/components/atoms/buttons/BasicButton';
 
 function SmallDialog({
   title, children, buttonLabel, onClick,
@@ -16,7 +17,9 @@ function SmallDialog({
         <ContentText>{children}</ContentText>
       </Content>
       <ButtonContainer>
-        <Button onClick={onClick}>{buttonLabel}</Button>
+        <BasicButton xsmall onClick={onClick}>
+          {buttonLabel}
+        </BasicButton>
       </ButtonContainer>
     </Container>
   );
@@ -51,15 +54,6 @@ const ContentText = styled.p`
 const ButtonContainer = styled.div`
   margin-bottom: 5px;
   margin-top: 5px;
-`;
-
-const Button = styled.button`
-  background-color: #333;
-  border-radius: 4px;
-  color: #f5f5f5;
-  font-size: 16px;
-  height: 44px;
-  width: 150px;
 `;
 
 SmallDialog.propTypes = {

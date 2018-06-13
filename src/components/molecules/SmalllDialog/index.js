@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import BasicButton from 'src/components/atoms/buttons/BasicButton';
+import BasicText from 'src/components/atoms/texts/BasicText';
 
 function SmallDialog({
   title, children, buttonLabel, onClick,
@@ -10,11 +11,11 @@ function SmallDialog({
     <Container>
       {title ? (
         <Title>
-          <TitleText>{title}</TitleText>
+          <BasicText emphasis>{title}</BasicText>
         </Title>
       ) : null}
       <Content>
-        <ContentText>{children}</ContentText>
+        <BasicText>{children}</BasicText>
       </Content>
       <ButtonContainer>
         <BasicButton xsmall onClick={onClick}>
@@ -37,18 +38,9 @@ const Title = styled.div`
   margin-top: 5px;
 `;
 
-const TitleText = styled.p`
-  font-size: 18px;
-  font-weight: bold;
-`;
-
 const Content = styled.div`
   margin-bottom: 5px;
   margin-top: 5px;
-`;
-
-const ContentText = styled.p`
-  font-size: 16px;
 `;
 
 const ButtonContainer = styled.div`

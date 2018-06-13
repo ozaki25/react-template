@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 import SmallDialog from '.';
 
-const stories = storiesOf('atoms/Dialogs', module);
+const stories = storiesOf('molecules/Dialogs', module);
 
 const decorator = storyFn => (
   <div style={{ backgroundColor: '#bbb', padding: 15 }}>{storyFn()}</div>

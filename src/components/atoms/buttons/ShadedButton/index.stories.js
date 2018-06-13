@@ -7,11 +7,11 @@ import { action } from '@storybook/addon-actions';
 
 import MenuButton from '.';
 
-const stories = storiesOf('atoms/buttons', module);
+const stories = storiesOf('atoms/buttons/ShadedButton', module);
 
 stories.add(
-  'MenuButton',
-  withInfo('MenuButton')(() => (
+  'nomal',
+  withInfo('nomal')(() => (
     <MenuButton onClick={action('click button')}>{text('text', 'ボタン')}</MenuButton>
   )),
 );

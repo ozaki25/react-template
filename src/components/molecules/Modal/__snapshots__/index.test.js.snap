@@ -11,6 +11,18 @@ exports[`should match snapshot: Modal 1`] = `
   width: 150px;
 }
 
+.c4 {
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.c6 {
+  color: #333;
+  font-size: 16px;
+  font-weight: nomal;
+}
+
 .c2 {
   background-color: #f5f5f5;
   border-radius: 4px;
@@ -23,18 +35,9 @@ exports[`should match snapshot: Modal 1`] = `
   margin-top: 5px;
 }
 
-.c4 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
 .c5 {
   margin-bottom: 5px;
   margin-top: 5px;
-}
-
-.c6 {
-  font-size: 16px;
 }
 
 .c7 {
@@ -85,26 +88,42 @@ exports[`should match snapshot: Modal 1`] = `
                   <div
                     className="c3"
                   >
-                    <styled.p>
-                      <p
-                        className="c4"
+                    <BasicText
+                      emphasis={true}
+                      red={false}
+                    >
+                      <styled.p
+                        emphasis={true}
+                        red={false}
                       >
-                        タイトル
-                      </p>
-                    </styled.p>
+                        <p
+                          className="c4"
+                        >
+                          タイトル
+                        </p>
+                      </styled.p>
+                    </BasicText>
                   </div>
                 </styled.div>
                 <styled.div>
                   <div
                     className="c5"
                   >
-                    <styled.p>
-                      <p
-                        className="c6"
+                    <BasicText
+                      emphasis={false}
+                      red={false}
+                    >
+                      <styled.p
+                        emphasis={false}
+                        red={false}
                       >
-                        コンテンツ
-                      </p>
-                    </styled.p>
+                        <p
+                          className="c6"
+                        >
+                          コンテンツ
+                        </p>
+                      </styled.p>
+                    </BasicText>
                   </div>
                 </styled.div>
                 <styled.div>

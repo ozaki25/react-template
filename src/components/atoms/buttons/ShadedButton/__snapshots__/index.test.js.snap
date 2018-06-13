@@ -4,7 +4,7 @@ exports[`should match snapshot: MenuButton 1`] = `
 .c0 {
   border: solid 1px #eee;
   box-shadow: 1px 1px 1px #bdbdbd;
-  color: #212121;
+  color: #333;
   display: inline-block;
   font-size: 14px;
   font-weight: bold;
@@ -20,7 +20,7 @@ exports[`should match snapshot: MenuButton 1`] = `
   box-shadow: 1px 1px 1px #f5f5f5;
 }
 
-<MenuButton
+<ShadedButton
   onClick={[Function]}
 >
   <styled.button
@@ -33,5 +33,5 @@ exports[`should match snapshot: MenuButton 1`] = `
       ボタン
     </button>
   </styled.button>
-</MenuButton>
+</ShadedButton>
 `;

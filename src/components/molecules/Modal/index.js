@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Dialog from 'src/components/atoms/dialogs/Dialog';
+import Dialog from 'src/components/molecules/SmalllDialog';
 
 function Modal({
   title, children, buttonLabel, onClick,

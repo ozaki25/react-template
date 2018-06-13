@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Color from 'src/constants/Color';
 
-const MenuButton = ({ children, onClick }) => <Button onClick={onClick}>{children}</Button>;
+const ShadedButton = ({ children, onClick }) => <Button onClick={onClick}>{children}</Button>;
 
 const Button = styled.button`
   border: solid 1px #eee;
   box-shadow: 1px 1px 1px #bdbdbd;
-  color: #212121;
+  color: ${Color.text};
   display: inline-block;
   font-size: 14px;
   font-weight: bold;
@@ -22,9 +23,9 @@ const Button = styled.button`
   }
 `;
 
-MenuButton.propTypes = {
+ShadedButton.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
-export default MenuButton;
+export default ShadedButton;

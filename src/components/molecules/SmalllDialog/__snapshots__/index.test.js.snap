@@ -11,6 +11,18 @@ exports[`should match snapshot: SmallDialog/タイトルあり 1`] = `
   width: 150px;
 }
 
+.c2 {
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.c4 {
+  color: #333;
+  font-size: 16px;
+  font-weight: nomal;
+}
+
 .c0 {
   background-color: #f5f5f5;
   border-radius: 4px;
@@ -23,18 +35,9 @@ exports[`should match snapshot: SmallDialog/タイトルあり 1`] = `
   margin-top: 5px;
 }
 
-.c2 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
 .c3 {
   margin-bottom: 5px;
   margin-top: 5px;
-}
-
-.c4 {
-  font-size: 16px;
 }
 
 .c5 {
@@ -55,26 +58,42 @@ exports[`should match snapshot: SmallDialog/タイトルあり 1`] = `
         <div
           className="c1"
         >
-          <styled.p>
-            <p
-              className="c2"
+          <BasicText
+            emphasis={true}
+            red={false}
+          >
+            <styled.p
+              emphasis={true}
+              red={false}
             >
-              タイトル
-            </p>
-          </styled.p>
+              <p
+                className="c2"
+              >
+                タイトル
+              </p>
+            </styled.p>
+          </BasicText>
         </div>
       </styled.div>
       <styled.div>
         <div
           className="c3"
         >
-          <styled.p>
-            <p
-              className="c4"
+          <BasicText
+            emphasis={false}
+            red={false}
+          >
+            <styled.p
+              emphasis={false}
+              red={false}
             >
-              コンテンツ
-            </p>
-          </styled.p>
+              <p
+                className="c4"
+              >
+                コンテンツ
+              </p>
+            </styled.p>
+          </BasicText>
         </div>
       </styled.div>
       <styled.div>
@@ -122,6 +141,12 @@ exports[`should match snapshot: SmallDialog/タイトルなし 1`] = `
   width: 150px;
 }
 
+.c2 {
+  color: #333;
+  font-size: 16px;
+  font-weight: nomal;
+}
+
 .c0 {
   background-color: #f5f5f5;
   border-radius: 4px;
@@ -132,10 +157,6 @@ exports[`should match snapshot: SmallDialog/タイトルなし 1`] = `
 .c1 {
   margin-bottom: 5px;
   margin-top: 5px;
-}
-
-.c2 {
-  font-size: 16px;
 }
 
 .c3 {
@@ -156,13 +177,21 @@ exports[`should match snapshot: SmallDialog/タイトルなし 1`] = `
         <div
           className="c1"
         >
-          <styled.p>
-            <p
-              className="c2"
+          <BasicText
+            emphasis={false}
+            red={false}
+          >
+            <styled.p
+              emphasis={false}
+              red={false}
             >
-              コンテンツ
-            </p>
-          </styled.p>
+              <p
+                className="c2"
+              >
+                コンテンツ
+              </p>
+            </styled.p>
+          </BasicText>
         </div>
       </styled.div>
       <styled.div>

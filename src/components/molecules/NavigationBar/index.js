@@ -1,23 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import NavigationBarLink from 'src/components/atoms/navigation/NavigationBarLink';
-import NavigationTitleText from 'src/components/atoms/navigation/NavigationTitleText';
+import Color from 'src/constants/Color';
 
 const NavigationBar = ({ title, onClickBack, onClickForward }) => (
   <Container>
-    <Left>{onClickBack && <NavigationBarLink onClick={onClickBack}>&lt;</NavigationBarLink>}</Left>
+    <Left>{onClickBack && <Link onClick={onClickBack}>&lt;</Link>}</Left>
     <Title>
-      <NavigationTitleText>{title}</NavigationTitleText>
+      <TitleText>{title}</TitleText>
     </Title>
-    <Right>
-      {onClickForward && <NavigationBarLink onClick={onClickForward}>&gt;</NavigationBarLink>}
-    </Right>
+    <Right>{onClickForward && <Link onClick={onClickForward}>&gt;</Link>}</Right>
   </Container>
 );
 
 const Container = styled.nav`
-  border-bottom: 3px solid #e70000;
+  border-bottom: 3px solid ${Color.brand};
   height: 56px;
   text-align: center;
   width: '100%';
@@ -39,6 +36,17 @@ const Right = styled.div`
   float: left;
   padding-top: 10px;
   width: 50px;
+`;
+
+const TitleText = styled.p`
+  color: ${Color.text};
+  font-size: 18px;
+  font-weight: bold;
+`;
+
+const Link = styled.button`
+  color: ${Color.brand};
+  font-size: 30px;
 `;
 
 NavigationBar.propTypes = {

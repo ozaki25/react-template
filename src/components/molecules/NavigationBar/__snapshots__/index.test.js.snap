@@ -1,19 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot: NavigationBar 1`] = `
-.c2 {
-  font-size: 30px;
-  color: #e70000;
-}
-
-.c4 {
-  color: #333;
-  font-size: 18px;
-  font-weight: bold;
-}
-
 .c0 {
-  border-bottom: 3px solid #e70000;
+  border-bottom: 3px solid #e60000;
   height: 56px;
   text-align: center;
   width: '100%';
@@ -37,6 +26,17 @@ exports[`should match snapshot: NavigationBar 1`] = `
   width: 50px;
 }
 
+.c4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.c2 {
+  color: #e60000;
+  font-size: 30px;
+}
+
 <NavigationBar
   onClickBack={[Function]}
   onClickForward={[Function]}
@@ -50,55 +50,45 @@ exports[`should match snapshot: NavigationBar 1`] = `
         <div
           className="c1"
         >
-          <NavigationBarLink
+          <styled.button
             onClick={[Function]}
           >
-            <styled.button
+            <button
+              className="c2"
               onClick={[Function]}
             >
-              <button
-                className="c2"
-                onClick={[Function]}
-              >
-                &lt;
-              </button>
-            </styled.button>
-          </NavigationBarLink>
+              &lt;
+            </button>
+          </styled.button>
         </div>
       </styled.div>
       <styled.div>
         <div
           className="c3"
         >
-          <NavigationTitleText>
-            <styled.p>
-              <p
-                className="c4"
-              >
-                タイトル
-              </p>
-            </styled.p>
-          </NavigationTitleText>
+          <styled.p>
+            <p
+              className="c4"
+            >
+              タイトル
+            </p>
+          </styled.p>
         </div>
       </styled.div>
       <styled.div>
         <div
           className="c5"
         >
-          <NavigationBarLink
+          <styled.button
             onClick={[Function]}
           >
-            <styled.button
+            <button
+              className="c2"
               onClick={[Function]}
             >
-              <button
-                className="c2"
-                onClick={[Function]}
-              >
-                &gt;
-              </button>
-            </styled.button>
-          </NavigationBarLink>
+              &gt;
+            </button>
+          </styled.button>
         </div>
       </styled.div>
     </nav>
@@ -107,14 +97,8 @@ exports[`should match snapshot: NavigationBar 1`] = `
 `;
 
 exports[`should match snapshot: NavigationBar 2`] = `
-.c3 {
-  color: #333;
-  font-size: 18px;
-  font-weight: bold;
-}
-
 .c0 {
-  border-bottom: 3px solid #e70000;
+  border-bottom: 3px solid #e60000;
   height: 56px;
   text-align: center;
   width: '100%';
@@ -138,6 +122,12 @@ exports[`should match snapshot: NavigationBar 2`] = `
   width: 50px;
 }
 
+.c3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 <NavigationBar
   onClickBack={null}
   onClickForward={null}
@@ -156,15 +146,13 @@ exports[`should match snapshot: NavigationBar 2`] = `
         <div
           className="c2"
         >
-          <NavigationTitleText>
-            <styled.p>
-              <p
-                className="c3"
-              >
-                タイトル
-              </p>
-            </styled.p>
-          </NavigationTitleText>
+          <styled.p>
+            <p
+              className="c3"
+            >
+              タイトル
+            </p>
+          </styled.p>
         </div>
       </styled.div>
       <styled.div>

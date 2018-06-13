@@ -1,9 +1,9 @@
 import React from 'react';
 import { snapshot } from 'test/helpers';
-import LinkText from '.';
+import Link from '.';
 
 const props = {
   onClick: jest.fn(),
 };
 
-snapshot('LinkText', <LinkText {...props}>リンク</LinkText>);
+snapshot('Link', <Link {...props}>リンク</Link>);

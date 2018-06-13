@@ -5,13 +5,11 @@ import { withInfo } from '@storybook/addon-info';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import LinkText from '.';
+import Link from '.';
 
-const stories = storiesOf('atoms/texts', module);
+const stories = storiesOf('atoms/buttons', module);
 
 stories.add(
-  'LinkText',
-  withInfo('リンク用文字列')(() => (
-    <LinkText onClick={action('clicked LinkText')}>{text('text', 'リンク')}</LinkText>
-  )),
+  'Link',
+  withInfo('リンク')(() => <Link onClick={action('clicked Link')}>{text('text', 'リンク')}</Link>),
 );

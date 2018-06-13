@@ -1,22 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Color from 'src/constants/Color';
 
-const LinkText = ({ children, onClick }) => <Button onClick={onClick}>{children}</Button>;
+const Link = ({ children, onClick }) => <Button onClick={onClick}>{children}</Button>;
 
 const Button = styled.button`
-  color: #666;
+  color: ${Color.link};
   font-size: 16px;
   text-decoration: underline;
 `;
 
-LinkText.propTypes = {
+Link.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
 };
 
-LinkText.defaultProps = {
+Link.defaultProps = {
   onClick: null,
 };
 
-export default LinkText;
+export default Link;

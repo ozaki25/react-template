@@ -1,13 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot: BasicText 1`] = `
+exports[`should match snapshot: BasicText/emphasis 1`] = `
+.c0 {
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+<BasicText
+  emphasis={true}
+  red={false}
+>
+  <styled.p
+    emphasis={true}
+    red={false}
+  >
+    <p
+      className="c0"
+    >
+      テキスト
+    </p>
+  </styled.p>
+</BasicText>
+`;
+
+exports[`should match snapshot: BasicText/nomal 1`] = `
 .c0 {
   color: #333;
   font-size: 16px;
+  font-weight: nomal;
 }
 
-<BasicText>
-  <styled.p>
+<BasicText
+  emphasis={false}
+  red={false}
+>
+  <styled.p
+    emphasis={false}
+    red={false}
+  >
+    <p
+      className="c0"
+    >
+      テキスト
+    </p>
+  </styled.p>
+</BasicText>
+`;
+
+exports[`should match snapshot: BasicText/red 1`] = `
+.c0 {
+  color: #e60000;
+  font-size: 16px;
+  font-weight: nomal;
+}
+
+<BasicText
+  emphasis={false}
+  red={true}
+>
+  <styled.p
+    emphasis={false}
+    red={true}
+  >
+    <p
+      className="c0"
+    >
+      テキスト
+    </p>
+  </styled.p>
+</BasicText>
+`;
+
+exports[`should match snapshot: BasicText/red-emphasis 1`] = `
+.c0 {
+  color: #e60000;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+<BasicText
+  emphasis={true}
+  red={true}
+>
+  <styled.p
+    emphasis={true}
+    red={true}
+  >
     <p
       className="c0"
     >

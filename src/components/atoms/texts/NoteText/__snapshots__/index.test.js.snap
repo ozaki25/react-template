@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot: BasicText/emphasis 1`] = `
+exports[`should match snapshot: NoteText/emphasis 1`] = `
 .c0 {
   color: #333;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
 }
 
-<BasicText
+<NoteText
   emphasis={true}
   red={false}
 >
@@ -21,17 +21,17 @@ exports[`should match snapshot: BasicText/emphasis 1`] = `
       テキスト
     </p>
   </styled.p>
-</BasicText>
+</NoteText>
 `;
 
-exports[`should match snapshot: BasicText/nomal 1`] = `
+exports[`should match snapshot: NoteText/nomal 1`] = `
 .c0 {
   color: #333;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: nomal;
 }
 
-<BasicText
+<NoteText
   emphasis={false}
   red={false}
 >
@@ -45,17 +45,17 @@ exports[`should match snapshot: BasicText/nomal 1`] = `
       テキスト
     </p>
   </styled.p>
-</BasicText>
+</NoteText>
 `;
 
-exports[`should match snapshot: BasicText/red 1`] = `
+exports[`should match snapshot: NoteText/red 1`] = `
 .c0 {
   color: #e60000;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: nomal;
 }
 
-<BasicText
+<NoteText
   emphasis={false}
   red={true}
 >
@@ -69,17 +69,17 @@ exports[`should match snapshot: BasicText/red 1`] = `
       テキスト
     </p>
   </styled.p>
-</BasicText>
+</NoteText>
 `;
 
-exports[`should match snapshot: BasicText/red-emphasis 1`] = `
+exports[`should match snapshot: NoteText/red-emphasis 1`] = `
 .c0 {
   color: #e60000;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
 }
 
-<BasicText
+<NoteText
   emphasis={true}
   red={true}
 >
@@ -93,5 +93,5 @@ exports[`should match snapshot: BasicText/red-emphasis 1`] = `
       テキスト
     </p>
   </styled.p>
-</BasicText>
+</NoteText>
 `;

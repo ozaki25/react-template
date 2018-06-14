@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import Loading from 'src/components/atoms/loading/Loading';
 import NavigationBar from 'src/components/molecules/NavigationBar';
-import Modal from 'src/components/molecules/Modal';
+import Dialog from 'src/components/molecules/SmalllDialog';
 import Main from 'src/components/organisms/TopPage/Main';
 
 class TopPage extends React.Component {
@@ -27,14 +27,14 @@ class TopPage extends React.Component {
         <Main onClickStartReissue={this.navigateHome} />
         <Loading show={loading} />
         {!loading && !success ? (
-          <Modal title="通信エラー" onClick={postUser} buttonLabel="OK">
+          <Dialog title="通信エラー" onClick={postUser} buttonLabel="OK">
             通信に失敗しました。リトライします。
-          </Modal>
+          </Dialog>
         ) : null}
         {exception ? (
-          <Modal title="通信エラー" onClick={postUser} buttonLabel="OK">
+          <Dialog title="通信エラー" onClick={postUser} buttonLabel="OK">
             通信エラーが発生しました\n電波の良いところで再実行して下さい。
-          </Modal>
+          </Dialog>
         ) : null}
       </React.Fragment>
     );

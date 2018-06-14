@@ -9,12 +9,6 @@ import SmallDialog from '.';
 
 const stories = storiesOf('molecules/Dialogs', module);
 
-const decorator = storyFn => (
-  <div style={{ backgroundColor: '#bbb', padding: 15 }}>{storyFn()}</div>
-);
-
-stories.addDecorator(decorator);
-
 stories.add(
   'SmallDialog/タイトルあり',
   withInfo('SmallDialog')(() => (

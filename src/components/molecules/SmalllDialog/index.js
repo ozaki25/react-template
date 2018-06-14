@@ -9,24 +9,47 @@ function SmallDialog({
 }) {
   return (
     <Container>
-      {title ? (
-        <Title>
-          <BasicText emphasis>{title}</BasicText>
-        </Title>
-      ) : null}
-      <Content>
-        <BasicText>{children}</BasicText>
-      </Content>
-      <ButtonContainer>
-        <BasicButton xsmall onClick={onClick}>
-          {buttonLabel}
-        </BasicButton>
-      </ButtonContainer>
+      <DialogContainer>
+        <Dialog>
+          {title ? (
+            <Title>
+              <BasicText emphasis>{title}</BasicText>
+            </Title>
+          ) : null}
+          <Content>
+            <BasicText>{children}</BasicText>
+          </Content>
+          <ButtonContainer>
+            <BasicButton xsmall onClick={onClick}>
+              {buttonLabel}
+            </BasicButton>
+          </ButtonContainer>
+        </Dialog>
+      </DialogContainer>
     </Container>
   );
 }
 
 const Container = styled.div`
+  background-color: #0009;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+`;
+
+const DialogContainer = styled.div`
+  left: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: fixed;
+  right: 0;
+  top: 35%;
+`;
+
+const Dialog = styled.div`
   background-color: #f5f5f5;
   border-radius: 4px;
   padding: 10px;

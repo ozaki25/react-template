@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import BasicButton from 'src/components/atoms/buttons/BasicButton';
 import BasicText from 'src/components/atoms/texts/BasicText';
 
-function SmallDialog({
-  title, children, buttonLabel, onClick,
-}) {
-  return (
+const SmallDialog = ({
+  title, children, buttonLabel, onClick, show,
+}) =>
+  (show ? (
     <Container>
       <DialogContainer>
         <Dialog>
@@ -27,8 +27,7 @@ function SmallDialog({
         </Dialog>
       </DialogContainer>
     </Container>
-  );
-}
+  ) : null);
 
 const Container = styled.div`
   background-color: #0009;
@@ -76,11 +75,13 @@ SmallDialog.propTypes = {
   children: PropTypes.string.isRequired,
   buttonLabel: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  show: PropTypes.bool,
 };
 
 SmallDialog.defaultProps = {
   title: '',
   onClick: null,
+  show: true,
 };
 
 export default SmallDialog;

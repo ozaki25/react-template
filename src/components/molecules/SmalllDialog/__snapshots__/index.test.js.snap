@@ -67,6 +67,7 @@ exports[`should match snapshot: SmallDialog/タイトルあり 1`] = `
 <SmallDialog
   buttonLabel="OK"
   onClick={[Function]}
+  show={true}
   title="タイトル"
 >
   <styled.div>
@@ -217,6 +218,7 @@ exports[`should match snapshot: SmallDialog/タイトルなし 1`] = `
 <SmallDialog
   buttonLabel="OK"
   onClick={[Function]}
+  show={true}
   title=""
 >
   <styled.div>
@@ -288,4 +290,13 @@ exports[`should match snapshot: SmallDialog/タイトルなし 1`] = `
     </div>
   </styled.div>
 </SmallDialog>
+`;
+
+exports[`should match snapshot: SmallDialog/非表示 1`] = `
+<SmallDialog
+  buttonLabel="OK"
+  onClick={[Function]}
+  show={false}
+  title=""
+/>
 `;

@@ -26,16 +26,12 @@ class TopPage extends React.Component {
         <NavigationBar title="アプリメニュー" />
         <Main onClickStartReissue={this.navigateHome} />
         <Loading show={loading} />
-        {!loading && !success ? (
-          <Dialog title="通信エラー" onClick={postUser} buttonLabel="OK">
-            通信に失敗しました。リトライします。
-          </Dialog>
-        ) : null}
-        {exception ? (
-          <Dialog title="通信エラー" onClick={postUser} buttonLabel="OK">
-            通信エラーが発生しました\n電波の良いところで再実行して下さい。
-          </Dialog>
-        ) : null}
+        <Dialog title="通信エラー" onClick={postUser} buttonLabel="OK" show={!loading && !success}>
+          通信に失敗しました。リトライします。
+        </Dialog>
+        <Dialog title="通信エラー" onClick={postUser} buttonLabel="OK" show={exception}>
+          通信エラーが発生しました。電波の良いところで再実行して下さい。
+        </Dialog>
       </React.Fragment>
     );
   }

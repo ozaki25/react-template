@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import SmallDialog from '.';
@@ -16,6 +16,7 @@ stories.add(
       title={text('title', '見出し')}
       buttonLabel={text('button', 'OK')}
       onClick={action('click')}
+      show={boolean('show', true)}
     >
       {text('content', '複数行になるように長めの文章にしています')}
     </SmallDialog>
@@ -25,7 +26,11 @@ stories.add(
 stories.add(
   'SmallDialog/タイトルなし',
   withInfo('SmallDialog')(() => (
-    <SmallDialog buttonLabel={text('button', 'OK')} onClick={action('click')}>
+    <SmallDialog
+      buttonLabel={text('button', 'OK')}
+      onClick={action('click')}
+      show={boolean('show', true)}
+    >
       {text('content', '複数行になるように長めの文章にしています')}
     </SmallDialog>
   )),

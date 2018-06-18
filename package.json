@@ -28,14 +28,11 @@
     "format": "prettier-eslint --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
+    "screenshot": "storybook-chrome-screenshot -p 9001 -c .storybook",
     "create-component": "create-component-app --config .ccarc.json"
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "prettier-eslint --write",
-      "git add",
-      "eslint"
-    ],
+    "src/**/*.js": ["prettier-eslint --write", "git add", "eslint"],
     "src/components/**/*.js": "stylelint"
   },
   "devDependencies": {
@@ -69,15 +66,13 @@
     "react-test-renderer": "^16.3.2",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.1",
+    "storybook-chrome-screenshot": "^1.1.0-alpha.4",
     "stylelint": "^9.2.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.3.1"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/**/*.stories.js"
-    ]
+    "collectCoverageFrom": ["src/**/*.js", "!src/**/*.stories.js"]
   }
 }
